@@ -160,7 +160,7 @@ export function loadQuestions(amount, difficulty) {
 }
 
 /**
- * Populates store with questions for the quiz
+ * Answers the current question
  */
 export function answerQuestion(answer) {
 	return {
