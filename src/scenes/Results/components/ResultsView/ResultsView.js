@@ -13,7 +13,41 @@ import Title from "trivia-game/src/components/Title/Title";
 import Button from "trivia-game/src/components/Button/Button";
 import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
 import { getNumberCorrect, getTotalNumberOfQuestions, playAgain } from "trivia-game/src/redux/modules/quiz";
-import ResultsView from "trivia-game/src/scenes/Results/components/ResultsView/ResultsView";
+import ResultsList from "trivia-game/src/scenes/Results/components/ResultsView/components/ResultsList/ResultsList";
+
+//*********************************************************
+// Styles
+//*********************************************************
+const StyledView = styled.View`
+	flex: 1;
+	flex-direction: column;
+	background-color: #115492;
+`;
+
+const Row = styled.View`
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+const ResultContainer = styled.View`
+	flex: 4;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+`;
+
+const ResultScrollView = styled.ScrollView`
+	flex: 1;
+`;
+
+const ResultInner = styled.View`
+	flex: 1;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+`;
 
 //*********************************************************
 // PropTypes
@@ -40,7 +74,7 @@ const propTypes = {
 	/**
 	 * Total number of questions
 	 */
-	total: PropTypes.number,
+	total: PropTypes.number.isRequired,
 	/**
 	 * Restarts the quiz
 	 */
@@ -48,44 +82,42 @@ const propTypes = {
 };
 
 //*********************************************************
-// Redux mappings
+// Component
 //*********************************************************
-const mapStateToProps = (state, ownProps) => ({
-	questions: state.quiz.questions,
-	answers: state.quiz.answers,
-	score: getNumberCorrect(state),
-	total: getTotalNumberOfQuestions(state)
-});
+const ResultsView = ({
+	score,
+	total,
+	questions,
+	answers,
+	playAgain
+}) => (
+	<StyledView>
+		<Row>
+			<Title title="You scored"/>
+		</Row>
 
-const mapDispatchToProps = {
-	playAgain: playAgain
-};
+		<Row>
+			<Title title={`${score} / ${total}`}/>
+		</Row>
 
-//*********************************************************
-// Results Scene
-//*********************************************************
-class Results extends Component {
+		<ResultContainer>
+			<ResultInner>
+				<ResultScrollView>
+					<ResultsList
+						questions={questions}
+						answers={answers}
+					/>
+				</ResultScrollView>
+			</ResultInner>
+		</ResultContainer>
 
-	componentWillReceiveProps(nextProps) {
-		if(!nextProps.isComplete) {
-			goToScene[HOME_SCENE]();
-		}
-	}
+		<FooterButton
+			title="Play again?"
+			onPress={playAgain}
+		/>
+	</StyledView>
+);
 
-	render() {
-		const { score, total, questions, answers, playAgain } = this.props;
-		return (
-			<ResultsView
-				score={score}
-				total={total}
-				questions={questions}
-				answers={answers}
-				playAgain={playAgain}
-			/>
-		);
-	}
-}
+ResultsView.propTypes = propTypes;
 
-Results.propTypes = propTypes;
-
-export default connect(mapStateToProps, mapDispatchToProps)(Results);
+export default ResultsView;

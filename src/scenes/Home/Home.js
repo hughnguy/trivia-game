@@ -35,40 +35,38 @@ const StyledText = styled.Text`
 `;
 
 //*********************************************************
+// Methods
+//*********************************************************
+/**
+ * Goes to quiz and starts the trivia game
+ */
+const handleBeginPress = () => {
+	goToScene[QUIZ_SCENE]();
+};
+
+//*********************************************************
 // Home Scene
 //*********************************************************
-class Home extends Component {
-
-	/**
-	 * Goes to quiz and starts the trivia game
-	 */
-	handleBeginPress = () => {
-		goToScene[QUIZ_SCENE]();
-	};
-
-	render() {
-		return (
-			<StyledView>
-				<Row>
-					<Title title="Welcome to the Trivia Challenge!"/>
-				</Row>
-				<Row>
-					<StyledText>
-						You will be presented with {GLOBAL.NUMBER_QUESTIONS} True or False questions.
-					</StyledText>
-				</Row>
-				<Row>
-					<StyledText>
-						Can you score 100%?
-					</StyledText>
-				</Row>
-				<FooterButton
-					title="Begin"
-					onPress={this.handleBeginPress}
-				/>
-			</StyledView>
-		);
-	}
-}
+const Home = () => (
+	<StyledView>
+		<Row>
+			<Title title="Welcome to the Trivia Challenge!"/>
+		</Row>
+		<Row>
+			<StyledText>
+				You will be presented with {GLOBAL.NUMBER_QUESTIONS} True or False questions.
+			</StyledText>
+		</Row>
+		<Row>
+			<StyledText>
+				Can you score 100%?
+			</StyledText>
+		</Row>
+		<FooterButton
+			title="Begin"
+			onPress={handleBeginPress}
+		/>
+	</StyledView>
+);
 
 export default Home;
