@@ -1,11 +1,5 @@
 import React, { Component } from "react";
 import * as GLOBAL from "trivia-game/src/globals.js";
-import {
-	Text,
-	View,
-	TouchableOpacity,
-	ActivityIndicator
-} from "react-native";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { connect } from "react-redux";

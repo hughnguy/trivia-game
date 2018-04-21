@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as GLOBAL from "trivia-game/src/globals.js";
+import { QUIZ_ROUTE } from "trivia-game/src/Routes";
 import styled from "styled-components";
 
 //*********************************************************
@@ -46,6 +47,9 @@ class Home extends Component {
                         Can you score 100%?
                     </StyledText>
                 </Row>
+
+                <button onClick={() => this.props.history.push(QUIZ_ROUTE)}>Test</button>
+
             </StyledView>
         );
     }
