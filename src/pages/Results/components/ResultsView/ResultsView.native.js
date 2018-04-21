@@ -8,12 +8,11 @@ import {
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { goToScene, HOME_SCENE } from "trivia-game/src/Routes";
 import Title from "trivia-game/src/components/Title/Title";
 import Button from "trivia-game/src/components/Button/Button";
 import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
 import { getNumberCorrect, getTotalNumberOfQuestions, playAgain } from "trivia-game/src/redux/modules/quiz";
-import ResultsList from "trivia-game/src/scenes/Results/components/ResultsView/components/ResultsList/ResultsList";
+import ResultsList from "trivia-game/src/pages/Results/components/ResultsView/components/ResultsList/ResultsList";
 
 //*********************************************************
 // Styles

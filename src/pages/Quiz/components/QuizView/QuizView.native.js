@@ -3,16 +3,12 @@ import * as GLOBAL from "trivia-game/src/globals.js";
 import {
 	Text,
 	View,
-	TouchableOpacity,
 	ActivityIndicator
 } from "react-native";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { connect } from "react-redux";
-import { goToScene, RESULTS_SCENE } from "trivia-game/src/Routes";
-import { loadQuestions, answerQuestion, getCurrentQuestion, getTotalNumberOfQuestions } from "trivia-game/src/redux/modules/quiz";
 import Title from "trivia-game/src/components/Title/Title";
-import AnswerButtons from "trivia-game/src/scenes/Quiz/components/QuizView/components/AnswerButtons/AnswerButtons";
+import AnswerButtons from "trivia-game/src/pages/Quiz/components/QuizView/components/AnswerButtons/AnswerButtons";
 
 //*********************************************************
 // Styles

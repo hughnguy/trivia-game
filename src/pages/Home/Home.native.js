@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { QUIZ_SCENE } from "trivia-game/src/Routes";
+import { QUIZ_ROUTE } from "trivia-game/src/Routes";
 import Title from "trivia-game/src/components/Title/Title";
 import Button from "trivia-game/src/components/Button/Button";
 import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
@@ -46,7 +46,7 @@ const propTypes = {
 };
 
 //*********************************************************
-// Home Scene
+// Component
 //*********************************************************
 const Home = ({history}) => (
 	<StyledView>
@@ -65,7 +65,7 @@ const Home = ({history}) => (
 		</Row>
 		<FooterButton
 			title="Begin"
-			onPress={() => history.push(QUIZ_SCENE)}
+			onPress={() => history.push(QUIZ_ROUTE)}
 		/>
 	</StyledView>
 );

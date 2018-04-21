@@ -9,9 +9,9 @@ import {
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { RESULTS_SCENE } from "trivia-game/src/Routes";
+import { RESULTS_ROUTE } from "trivia-game/src/Routes";
 import { loadQuestions, answerQuestion, getCurrentQuestion, getTotalNumberOfQuestions } from "trivia-game/src/redux/modules/quiz";
-import QuizView from "trivia-game/src/scenes/Quiz/components/QuizView/QuizView";
+import QuizView from "trivia-game/src/pages/Quiz/components/QuizView/QuizView";
 import Routing from "trivia-game/src/router";
 const { Redirect } = Routing;
 
@@ -73,7 +73,7 @@ const mapDispatchToProps = {
 };
 
 //*********************************************************
-// Quiz Scene
+// Component
 //*********************************************************
 class Quiz extends Component {
 
@@ -90,7 +90,7 @@ class Quiz extends Component {
 		const { isComplete, isLoading, currentQuestion, currentStep, total, answerQuestion } = this.props;
 
 		if(isComplete) {
-			return <Redirect to={RESULTS_SCENE}/>;
+			return <Redirect to={RESULTS_ROUTE}/>;
 		}
 
 		return (

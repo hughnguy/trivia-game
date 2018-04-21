@@ -8,9 +8,9 @@ import {
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { HOME_SCENE } from "trivia-game/src/Routes";
+import { HOME_ROUTE } from "trivia-game/src/Routes";
 import { getNumberCorrect, getTotalNumberOfQuestions, playAgain } from "trivia-game/src/redux/modules/quiz";
-import ResultsView from "trivia-game/src/scenes/Results/components/ResultsView/ResultsView";
+import ResultsView from "trivia-game/src/pages/Results/components/ResultsView/ResultsView";
 import Routing from "trivia-game/src/router";
 const { Redirect } = Routing;
 
@@ -66,7 +66,7 @@ const mapDispatchToProps = {
 };
 
 //*********************************************************
-// Results Scene
+// Component
 //*********************************************************
 const Results = ({
 	isComplete,
@@ -78,7 +78,7 @@ const Results = ({
 }) => {
 
 	if(!isComplete) {
-		return <Redirect to={HOME_SCENE}/>;
+		return <Redirect to={HOME_ROUTE}/>;
 	}
 
 	return (
