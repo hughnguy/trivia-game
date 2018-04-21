@@ -37,7 +37,12 @@ let initialState = {
 	/**
 	 * If the quiz is finished
 	 */
-	isComplete: false
+	isComplete: false,
+
+	/**
+	 * High score for the game
+	 */
+	highScore: 0
 };
 
 //*********************************************************
@@ -65,7 +70,7 @@ export default function reducer(state = initialState, action = {}) {
 
 			const { answer } = action.payload;
 
-			const currentQuestion = state.questions[state.currentStep];
+			const currentQuestion = getCurrentQuestion({quiz: state});
 			const answers  = state.answers;
 			const isLastQuestion = state.currentStep === state.questions.length - 1;
 			const nextStep = isLastQuestion ? state.currentStep : state.currentStep + 1;
@@ -82,7 +87,14 @@ export default function reducer(state = initialState, action = {}) {
 		},
 		[PLAY_AGAIN]: () => {
 
-			return initialState;
+			const oldHighScore = state.highScore;
+			const currentScore = getNumberCorrect({quiz: state});
+			const newScore = (currentScore > oldHighScore) ? currentScore : oldHighScore;
+
+			return {
+				...initialState,
+				highScore: newScore
+			};
 		},
 		default: () => {
 			return state;

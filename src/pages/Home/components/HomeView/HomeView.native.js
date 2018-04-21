@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import * as GLOBAL from "trivia-game/src/globals.js";
 import {
-	Text,
-	View,
-	TouchableOpacity
+    Text,
+    View,
+    TouchableOpacity
 } from "react-native";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { QUIZ_ROUTE } from "trivia-game/src/Routes";
 import Title from "trivia-game/src/components/Title/Title";
 import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
 
@@ -38,37 +37,46 @@ const StyledText = styled.Text`
 // PropTypes
 //*********************************************************
 const propTypes = {
-	/**
-	 * History object provided by router
-	 */
-	history: PropTypes.object.isRequired
+    /**
+     * Event handler for starting the game
+     */
+    onBegin: PropTypes.func.isRequired,
+    /**
+     * High score for the game
+     */
+    highScore: PropTypes.number.isRequired
 };
 
 //*********************************************************
 // Component
 //*********************************************************
-const Home = ({history}) => (
-	<StyledView>
-		<Row>
-			<Title title="Welcome to the Trivia Challenge!"/>
-		</Row>
-		<Row>
-			<StyledText>
-				You will be presented with {GLOBAL.NUMBER_QUESTIONS} True or False questions.
-			</StyledText>
-		</Row>
-		<Row>
-			<StyledText>
-				Can you score 100%?
-			</StyledText>
-		</Row>
-		<FooterButton
-			title="Begin"
-			onPress={() => history.push(QUIZ_ROUTE)}
-		/>
-	</StyledView>
+const HomeView = ({onBegin, highScore}) => (
+    <StyledView>
+        <Row>
+            <Title title="Welcome to the Trivia Challenge!"/>
+        </Row>
+        <Row>
+            <StyledText>
+                You will be presented with {GLOBAL.NUMBER_QUESTIONS} True or False questions.
+            </StyledText>
+        </Row>
+        <Row>
+            <StyledText>
+                Can you score 100%?
+            </StyledText>
+        </Row>
+        <Row>
+            <StyledText>
+                High Score: {highScore}
+            </StyledText>
+        </Row>
+        <FooterButton
+            title="Begin"
+            onPress={onBegin}
+        />
+    </StyledView>
 );
 
-Home.propTypes = propTypes;
+HomeView.propTypes = propTypes;
 
-export default Home;
+export default HomeView;
