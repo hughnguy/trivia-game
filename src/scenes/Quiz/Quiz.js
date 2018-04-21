@@ -9,9 +9,11 @@ import {
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { goToScene, RESULTS_SCENE } from "trivia-game/src/Routes";
+import { RESULTS_SCENE } from "trivia-game/src/Routes";
 import { loadQuestions, answerQuestion, getCurrentQuestion, getTotalNumberOfQuestions } from "trivia-game/src/redux/modules/quiz";
 import QuizView from "trivia-game/src/scenes/Quiz/components/QuizView/QuizView";
+import Routing from "trivia-game/src/router";
+const { Redirect } = Routing;
 
 //*********************************************************
 // PropTypes
@@ -84,14 +86,13 @@ class Quiz extends Component {
 		}
 	}
 
-	componentWillReceiveProps(nextProps) {
-		if(nextProps.isComplete) {
-			goToScene[RESULTS_SCENE]();
-		}
-	}
-
 	render() {
-		const { isLoading, currentQuestion, currentStep, total, answerQuestion } = this.props;
+		const { isComplete, isLoading, currentQuestion, currentStep, total, answerQuestion } = this.props;
+
+		if(isComplete) {
+			return <Redirect to={RESULTS_SCENE}/>;
+		}
+
 		return (
 			<QuizView
 				isLoading={isLoading}

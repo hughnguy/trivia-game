@@ -8,17 +8,20 @@ import {
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { goToScene, HOME_SCENE } from "trivia-game/src/Routes";
-import Title from "trivia-game/src/components/Title/Title";
-import Button from "trivia-game/src/components/Button/Button";
-import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
+import { HOME_SCENE } from "trivia-game/src/Routes";
 import { getNumberCorrect, getTotalNumberOfQuestions, playAgain } from "trivia-game/src/redux/modules/quiz";
 import ResultsView from "trivia-game/src/scenes/Results/components/ResultsView/ResultsView";
+import Routing from "trivia-game/src/router";
+const { Redirect } = Routing;
 
 //*********************************************************
 // PropTypes
 //*********************************************************
 const propTypes = {
+	/**
+	 * If quiz is complete
+	 */
+	isComplete: PropTypes.bool.isRequired,
 	/**
 	 * Array of questions loaded from server
 	 */
@@ -51,6 +54,7 @@ const propTypes = {
 // Redux mappings
 //*********************************************************
 const mapStateToProps = (state, ownProps) => ({
+	isComplete: state.quiz.isComplete,
 	questions: state.quiz.questions,
 	answers: state.quiz.answers,
 	score: getNumberCorrect(state),
@@ -64,27 +68,29 @@ const mapDispatchToProps = {
 //*********************************************************
 // Results Scene
 //*********************************************************
-class Results extends Component {
+const Results = ({
+	isComplete,
+	score,
+	total,
+	questions,
+	answers,
+	playAgain
+}) => {
 
-	componentWillReceiveProps(nextProps) {
-		if(!nextProps.isComplete) {
-			goToScene[HOME_SCENE]();
-		}
+	if(!isComplete) {
+		return <Redirect to={HOME_SCENE}/>;
 	}
 
-	render() {
-		const { score, total, questions, answers, playAgain } = this.props;
-		return (
-			<ResultsView
-				score={score}
-				total={total}
-				questions={questions}
-				answers={answers}
-				playAgain={playAgain}
-			/>
-		);
-	}
-}
+	return (
+		<ResultsView
+			score={score}
+			total={total}
+			questions={questions}
+			answers={answers}
+			playAgain={playAgain}
+        />
+	);
+};
 
 Results.propTypes = propTypes;
 

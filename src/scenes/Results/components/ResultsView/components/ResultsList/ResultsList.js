@@ -60,7 +60,7 @@ const ResultsList = ({answers, questions})  => {
 
 		return (
 			<ResultListView key={id} isLast={isLast}>
-				<ResultListText>{id + 1}) {question}</ResultListText>
+				<ResultListText>{index + 1}) {question}</ResultListText>
 				<ResultListText>Actual answer: {correct_answer}</ResultListText>
 				<ResultListAnswer correct={correct}>Your answer: {yourAnswer}</ResultListAnswer>
 			</ResultListView>

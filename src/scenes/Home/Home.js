@@ -5,8 +5,9 @@ import {
 	View,
 	TouchableOpacity
 } from "react-native";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-import { goToScene, QUIZ_SCENE } from "trivia-game/src/Routes";
+import { QUIZ_SCENE } from "trivia-game/src/Routes";
 import Title from "trivia-game/src/components/Title/Title";
 import Button from "trivia-game/src/components/Button/Button";
 import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
@@ -35,19 +36,19 @@ const StyledText = styled.Text`
 `;
 
 //*********************************************************
-// Methods
+// PropTypes
 //*********************************************************
-/**
- * Goes to quiz and starts the trivia game
- */
-const handleBeginPress = () => {
-	goToScene[QUIZ_SCENE]();
+const propTypes = {
+	/**
+	 * History object provided by router
+	 */
+	history: PropTypes.object.isRequired
 };
 
 //*********************************************************
 // Home Scene
 //*********************************************************
-const Home = () => (
+const Home = ({history}) => (
 	<StyledView>
 		<Row>
 			<Title title="Welcome to the Trivia Challenge!"/>
@@ -64,9 +65,11 @@ const Home = () => (
 		</Row>
 		<FooterButton
 			title="Begin"
-			onPress={handleBeginPress}
+			onPress={() => history.push(QUIZ_SCENE)}
 		/>
 	</StyledView>
 );
+
+Home.propTypes = propTypes;
 
 export default Home;

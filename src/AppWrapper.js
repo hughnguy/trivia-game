@@ -1,21 +1,5 @@
 import React from "react";
-import {
-	View,
-	Dimensions
-} from "react-native";
 import Routes from "trivia-game/src/Routes";
-import styled from "styled-components";
-
-const deviceHeight = Dimensions.get("window").height;
-const deviceWidth = Dimensions.get("window").width;
-
-//*********************************************************
-// Styles
-//*********************************************************
-const StyledView = styled.View`
-	width: ${deviceWidth};
-	height: ${deviceHeight};
-`;
 
 //*********************************************************
 // Component
@@ -30,9 +14,7 @@ export default class AppWrapper extends React.Component {
 
 	render() {
 		return (
-			<StyledView>
-				<Routes/>
-			</StyledView>
+            <Routes/>
 		);
 	}
 }

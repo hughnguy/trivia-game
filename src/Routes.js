@@ -1,6 +1,19 @@
 import React from "react";
-import { Router, Scene, Stack } from "react-native-router-flux";
-import { Actions } from "react-native-router-flux";
+import { View, Dimensions } from "react-native";
+import styled from "styled-components";
+import Routing, { Router } from "trivia-game/src/router";
+const { Route } = Routing;
+
+const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
+
+//*********************************************************
+// Styles
+//*********************************************************
+const RouteView = styled.View`
+	width: ${deviceWidth};
+	height: ${deviceHeight};
+`;
 
 //*********************************************************
 // Scene components
@@ -9,31 +22,25 @@ import Home from "trivia-game/src/scenes/Home/Home";
 import Quiz from "trivia-game/src/scenes/Quiz/Quiz";
 import Results from "trivia-game/src/scenes/Results/Results";
 
-/* Change route action */
-export const goToScene = Actions;
-
 //*********************************************************
 // Route names
 //*********************************************************
-export const HOME_SCENE = "home";
-export const QUIZ_SCENE = "quiz";
-export const RESULTS_SCENE = "results";
+export const HOME_SCENE = "/";
+export const QUIZ_SCENE = "/quiz";
+export const RESULTS_SCENE = "/results";
 
 //*********************************************************
 // Routers
 //*********************************************************
-/**
- * Note: pan handler set to null will prevent swipe to previous scene.
- */
 const Routes = () => {
 	return (
 		<Router>
-			<Stack key="root" hideNavBar={true}>
-				<Scene key={HOME_SCENE} component={Home} title={HOME_SCENE} panHandlers={null}/>
-				<Scene key={QUIZ_SCENE} component={Quiz} title={QUIZ_SCENE} panHandlers={null}/>
-				<Scene key={RESULTS_SCENE} component={Results} title={RESULTS_SCENE} panHandlers={null}/>
-			</Stack>
-		</Router>
+			<RouteView>
+                <Route exact path={HOME_SCENE} component={Home}/>
+                <Route path={QUIZ_SCENE} component={Quiz}/>
+                <Route path={RESULTS_SCENE} component={Results}/>
+            </RouteView>
+        </Router>
 	);
 };
 
