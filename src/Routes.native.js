@@ -18,9 +18,9 @@ const RouteView = styled.View`
 //*********************************************************
 // Page components
 //*********************************************************
-import Home from "trivia-game/src/pages/Home/Home";
-import Quiz from "trivia-game/src/pages/Quiz/Quiz";
-import Results from "trivia-game/src/pages/Results/Results";
+import Home from "trivia-game/src/pages/Home";
+import Quiz from "trivia-game/src/pages/Quiz";
+import Results from "trivia-game/src/pages/Results";
 
 //*********************************************************
 // Route names

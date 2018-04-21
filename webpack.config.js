@@ -11,7 +11,10 @@ module.exports = (env) => ({
 		vendor: [
 			"react"
 		],
-		app: "./src/App.js"
+		app: [
+			"babel-polyfill",
+			"./src/App.js"
+		]
 	},
 	cache: true,
 	output: {

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import {
-	Text,
 	View,
-	TouchableOpacity,
 	ScrollView
 } from "react-native";
 import styled from "styled-components";

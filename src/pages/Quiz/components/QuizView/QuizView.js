@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import * as GLOBAL from "trivia-game/src/globals.js";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-//import Title from "trivia-game/src/components/Title/Title";
-//import AnswerButtons from "trivia-game/src/pages/Quiz/components/QuizView/components/AnswerButtons/AnswerButtons";
+import Title from "trivia-game/src/components/Title/Title";
+import AnswerButtons from "trivia-game/src/pages/Quiz/components/QuizView/components/AnswerButtons/AnswerButtons";
 
 //*********************************************************
 // Styles
@@ -91,7 +91,7 @@ const QuizView = ({
     total,
     onTrueAnswer,
     onFalseAnswer,
-    }) => {
+}) => {
 
     if(isLoading) {
         return (
@@ -104,7 +104,7 @@ const QuizView = ({
     return (
         <StyledView>
             <Row>
-                currentQuestion.category
+                <Title title={currentQuestion.category}/>
             </Row>
             <QuestionView>
                 <StyledText>
@@ -117,12 +117,10 @@ const QuizView = ({
                 </StyledText>
             </Row>
             <Row>
-                {/*
-                    <AnswerButtons
-                        onTrueAnswer={onTrueAnswer}
-                        onFalseAnswer={onFalseAnswer}
-                        />
-                */}
+                <AnswerButtons
+                    onTrueAnswer={onTrueAnswer}
+                    onFalseAnswer={onFalseAnswer}
+                />
             </Row>
         </StyledView>
     );

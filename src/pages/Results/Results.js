@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import {
-	Text,
-	View,
-	TouchableOpacity,
-	ScrollView
-} from "react-native";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { HOME_ROUTE } from "trivia-game/src/Routes";
 import { getNumberCorrect, getTotalNumberOfQuestions, playAgain } from "trivia-game/src/redux/modules/quiz";
-import ResultsView from "trivia-game/src/pages/Results/components/ResultsView/ResultsView";
+import ResultsView from "trivia-game/src/pages/Results/components/ResultsView";
 import Routing from "trivia-game/src/router";
 const { Redirect } = Routing;
 

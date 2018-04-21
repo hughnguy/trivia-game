@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import * as GLOBAL from "trivia-game/src/globals.js";
 import { QUIZ_ROUTE } from "trivia-game/src/Routes";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import Title from "trivia-game/src/components/Title/Title";
+import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
 
 //*********************************************************
 // Styles
@@ -27,32 +30,40 @@ const StyledText = styled.div`
 `;
 
 //*********************************************************
-// Home Scene
+// PropTypes
 //*********************************************************
-class Home extends Component {
+const propTypes = {
+    /**
+     * History object provided by router
+     */
+    history: PropTypes.object.isRequired
+};
 
-    render() {
-        return (
-            <StyledView>
-                <Row>
-                    <div>Welcome to the Trivia Challenge!</div>
-                </Row>
-                <Row>
-                    <StyledText>
-                        You will be presented with {GLOBAL.NUMBER_QUESTIONS} True or False questions.
-                    </StyledText>
-                </Row>
-                <Row>
-                    <StyledText>
-                        Can you score 100%?
-                    </StyledText>
-                </Row>
+//*********************************************************
+// Component
+//*********************************************************
+const Home = ({history}) => (
+    <StyledView>
+        <Row>
+            <Title title="Welcome to the Trivia Challenge!"/>
+        </Row>
+        <Row>
+            <StyledText>
+                You will be presented with {GLOBAL.NUMBER_QUESTIONS} True or False questions.
+            </StyledText>
+        </Row>
+        <Row>
+            <StyledText>
+                Can you score 100%?
+            </StyledText>
+        </Row>
+        <FooterButton
+            title="Begin"
+            onClick={() => history.push(QUIZ_ROUTE)}
+        />
+    </StyledView>
+);
 
-                <button onClick={() => this.props.history.push(QUIZ_ROUTE)}>Test</button>
-
-            </StyledView>
-        );
-    }
-}
+Home.propTypes = propTypes;
 
 export default Home;

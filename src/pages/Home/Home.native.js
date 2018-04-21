@@ -9,7 +9,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { QUIZ_ROUTE } from "trivia-game/src/Routes";
 import Title from "trivia-game/src/components/Title/Title";
-import Button from "trivia-game/src/components/Button/Button";
 import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
 
 //*********************************************************
