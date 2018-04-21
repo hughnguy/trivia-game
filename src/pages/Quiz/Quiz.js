@@ -46,7 +46,11 @@ const propTypes = {
 	/**
 	 * Total number of questions
 	 */
-	total: PropTypes.number
+	total: PropTypes.number,
+	/**
+	 * Flag to see if questions have been loaded yet
+	 */
+	areQuestionsLoaded: PropTypes.bool.isRequired
 };
 
 
@@ -58,7 +62,8 @@ const mapStateToProps = (state, ownProps) => ({
 	isComplete: state.quiz.isComplete,
 	currentStep: state.quiz.currentStep,
 	currentQuestion: getCurrentQuestion(state),
-	total: getTotalNumberOfQuestions(state)
+	total: getTotalNumberOfQuestions(state),
+	areQuestionsLoaded: (state.quiz.questions.length !== 0)
 });
 
 const mapDispatchToProps = {
@@ -72,11 +77,14 @@ const mapDispatchToProps = {
 class Quiz extends Component {
 
 	async componentDidMount() {
-		const { loadQuestions } = this.props;
-		try {
-			await loadQuestions(GLOBAL.NUMBER_QUESTIONS, GLOBAL.DIFFICULTY);
-		} catch(e) {
-			alert("Unable to reach server: " + JSON.stringify(e));
+		const { loadQuestions, areQuestionsLoaded } = this.props;
+
+		if(!areQuestionsLoaded) {
+			try {
+				await loadQuestions(GLOBAL.NUMBER_QUESTIONS, GLOBAL.DIFFICULTY);
+			} catch (e) {
+				alert("Unable to reach server: " + JSON.stringify(e));
+			}
 		}
 	}
 

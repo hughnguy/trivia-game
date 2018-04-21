@@ -1,15 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 import StyledComponents, { ThemeProvider } from "styled-components";
 import themes from "trivia-game/src/themes/themes";
 import AppWrapper from "trivia-game/src/AppWrapper";
-import configureStore from "trivia-game/src/redux/store";
-
-//*********************************************************
-// Initialize redux store
-//*********************************************************
-const store = configureStore();
+import store, { persistor } from "trivia-game/src/redux/store";
 
 //*********************************************************
 // Root component
@@ -18,9 +14,11 @@ class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <ThemeProvider theme={themes.lightTheme}>
-                    <AppWrapper/>
-                </ThemeProvider>
+                <PersistGate loading={null} persistor={persistor}>
+                    <ThemeProvider theme={themes.lightTheme}>
+                        <AppWrapper/>
+                    </ThemeProvider>
+                </PersistGate>
             </Provider>
         );
     }
