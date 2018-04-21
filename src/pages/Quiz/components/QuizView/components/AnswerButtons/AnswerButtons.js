@@ -7,6 +7,8 @@ import Button from "trivia-game/src/components/Button/Button";
 // Styles
 //*********************************************************
 const ButtonView = styled.div`
+    margin-top: 50px;
+    display: flex;
 	flex: 1;
 	align-items: center;
 	justify-content: center;
@@ -14,6 +16,7 @@ const ButtonView = styled.div`
 `;
 
 const ButtonContainer = styled.div`
+    display: flex;
 	flex: 1;
 	flex-direction: row;
 	margin: 5px;

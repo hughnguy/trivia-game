@@ -5,12 +5,13 @@ import styled from "styled-components";
 //*********************************************************
 // Styles
 //*********************************************************
-const StyledTouchableOpacity = styled.button`
+const StyledButton = styled.button`
 	flex: 1;
     background-color: #e8544e;
     padding-horizontal: 12px;
     padding-vertical: 8px;
     border-radius: 2px;
+    cursor: pointer;
 `;
 
 const StyledText = styled.div`
@@ -36,11 +37,11 @@ const Button = ({
     title,
     ...rest
 }) => (
-    <StyledTouchableOpacity {...rest}>
+    <StyledButton {...rest}>
         <StyledText>
             {title}
         </StyledText>
-    </StyledTouchableOpacity>
+    </StyledButton>
 );
 
 Button.propTypes = propTypes;

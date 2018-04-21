@@ -14,6 +14,7 @@ const OuterView = styled.div`
 
 const InnerView = styled.div`
 	flex-direction: row;
+	display: flex;
 `;
 
 //*********************************************************

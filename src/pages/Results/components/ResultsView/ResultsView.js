@@ -12,6 +12,8 @@ import ResultsList from "trivia-game/src/pages/Results/components/ResultsView/co
 // Styles
 //*********************************************************
 const StyledView = styled.div`
+    height: 100vh;
+    overflow: scroll;
 	flex: 1;
 	flex-direction: column;
 	background-color: #115492;

@@ -7,8 +7,9 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Title from "trivia-game/src/components/Title/Title";
-import AnswerButtons from "trivia-game/src/pages/Quiz/components/QuizView/components/AnswerButtons/AnswerButtons";
+import Title from "trivia-game/src/components/Title";
+import AnswerButtons from "trivia-game/src/pages/Quiz/components/QuizView/components/AnswerButtons";
+import Spinner from "trivia-game/src/components/Spinner";
 
 //*********************************************************
 // Styles
@@ -29,12 +30,6 @@ const QuestionView = styled.View`
 	border-color: white;
 	border-radius: 10px;
 	padding: 20px;
-`;
-
-const SpinnerView = styled.View`
-	flex: 1;
-	align-items: center;
-	justify-content: center;
 `;
 
 const StyledText = styled.Text`
@@ -99,11 +94,7 @@ const QuizView = ({
 }) => {
 
 	if(isLoading) {
-		return (
-			<SpinnerView>
-				<ActivityIndicator size="large" color="#19ADD8"/>
-			</SpinnerView>
-		);
+		return <Spinner/>;
 	}
 
 	return (

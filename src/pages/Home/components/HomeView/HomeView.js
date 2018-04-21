@@ -9,6 +9,7 @@ import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
 // Styles
 //*********************************************************
 const StyledView = styled.div`
+    height: 100vh;
 	flex: 1;
 	flex-direction: column;
 	background-color: #353692;

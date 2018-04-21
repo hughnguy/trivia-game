@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import * as GLOBAL from "trivia-game/src/globals.js";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Title from "trivia-game/src/components/Title/Title";
-import AnswerButtons from "trivia-game/src/pages/Quiz/components/QuizView/components/AnswerButtons/AnswerButtons";
+import Title from "trivia-game/src/components/Title";
+import AnswerButtons from "trivia-game/src/pages/Quiz/components/QuizView/components/AnswerButtons";
+import Spinner from "trivia-game/src/components/Spinner";
 
 //*********************************************************
 // Styles
 //*********************************************************
 const StyledView = styled.div`
+    height: 100vh;
 	flex: 1;
 	flex-direction: column;
 	background-color: #43ade4;
@@ -24,12 +26,6 @@ const QuestionView = styled.div`
 	border-color: white;
 	border-radius: 10px;
 	padding: 20px;
-`;
-
-const SpinnerView = styled.div`
-	flex: 1;
-	align-items: center;
-	justify-content: center;
 `;
 
 const StyledText = styled.div`
@@ -94,11 +90,7 @@ const QuizView = ({
 }) => {
 
     if(isLoading) {
-        return (
-            <SpinnerView>
-                Loading...
-            </SpinnerView>
-        );
+        return <Spinner/>;
     }
 
     return (
