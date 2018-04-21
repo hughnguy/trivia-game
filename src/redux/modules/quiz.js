@@ -1,5 +1,7 @@
 import * as questionApi from "trivia-game/src/services/api/questionApi";
 import uniquid from "uniquid";
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
 
 //*********************************************************
 // Actions
@@ -49,6 +51,7 @@ export default function reducer(state = initialState, action = {}) {
 
 			const questionsWithId = results.map((result) => {
 				result.id = uniquid();
+				result.question = entities.decode(result.question);
 				return result;
 			});
 
@@ -61,16 +64,11 @@ export default function reducer(state = initialState, action = {}) {
 		[ANSWER_QUESTION]: () => {
 
 			const { answer } = action.payload;
+
 			const currentQuestion = state.questions[state.currentStep];
 			const answers  = state.answers;
 			const isLastQuestion = state.currentStep === state.questions.length - 1;
-
-			let nextStep;
-			if(isLastQuestion) {
-				nextStep = state.currentStep;
-			} else {
-				nextStep = state.currentStep + 1;
-			}
+			const nextStep = isLastQuestion ? state.currentStep : state.currentStep + 1;
 
 			return {
 				...state,
