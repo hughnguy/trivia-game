@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -25,20 +25,20 @@ const ResultListAnswer = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
+	/**
      * Key value map of answer for each question id
      */
-    answers: PropTypes.object.isRequired,
-    /**
+	answers: PropTypes.object.isRequired,
+	/**
      * Array of questions
      */
-    questions: PropTypes.arrayOf(PropTypes.shape({
-        category: PropTypes.string,
-        type: PropTypes.string,
-        question: PropTypes.string,
-        correct_answer: PropTypes.string,
-        incorrect_answers: PropTypes.arrayOf(PropTypes.string)
-    })).isRequired
+	questions: PropTypes.arrayOf(PropTypes.shape({
+		category: PropTypes.string,
+		type: PropTypes.string,
+		question: PropTypes.string,
+		correct_answer: PropTypes.string,
+		incorrect_answers: PropTypes.arrayOf(PropTypes.string)
+	})).isRequired
 };
 
 //*********************************************************
@@ -46,20 +46,20 @@ const propTypes = {
 //*********************************************************
 const ResultsList = ({answers, questions})  => {
 
-    return questions.map(({id, correct_answer, question}, index) => {
+	return questions.map(({id, correct_answer, question}, index) => {
 
-        const yourAnswer = answers[id];
-        const correct = (yourAnswer === correct_answer);
-        const isLast = (index === questions.length - 1);
+		const yourAnswer = answers[id];
+		const correct = (yourAnswer === correct_answer);
+		const isLast = (index === questions.length - 1);
 
-        return (
-            <ResultListView key={id} isLast={isLast}>
-                <ResultListText>{index + 1}) {question}</ResultListText>
-                <ResultListText>Actual answer: {correct_answer}</ResultListText>
-                <ResultListAnswer correct={correct}>Your answer: {yourAnswer}</ResultListAnswer>
-            </ResultListView>
-        );
-    });
+		return (
+			<ResultListView key={id} isLast={isLast}>
+				<ResultListText>{index + 1}) {question}</ResultListText>
+				<ResultListText>Actual answer: {correct_answer}</ResultListText>
+				<ResultListAnswer correct={correct}>Your answer: {yourAnswer}</ResultListAnswer>
+			</ResultListView>
+		);
+	});
 };
 
 ResultsList.propTypes = propTypes;

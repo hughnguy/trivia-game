@@ -24,24 +24,24 @@ export const StyledText = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
+	/**
      * Title inside button
      */
-    title: PropTypes.string.isRequired
+	title: PropTypes.string.isRequired
 };
 
 //*********************************************************
 // Component
 //*********************************************************
 const Button = ({
-    title,
-    ...rest
+	title,
+	...rest
 }) => (
-    <StyledButton {...rest}>
-        <StyledText>
-            {title}
-        </StyledText>
-    </StyledButton>
+	<StyledButton {...rest}>
+		<StyledText>
+			{title}
+		</StyledText>
+	</StyledButton>
 );
 
 Button.propTypes = propTypes;

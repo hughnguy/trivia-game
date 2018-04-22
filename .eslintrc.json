@@ -1,9 +1,17 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "mocha": true
     },
 	"globals": {
+        "browser": false,
+        "sinon": false,
+        "require": false,
+        "__dirname": false,
+        "expect": false,
+        "assert": false,
+        "module": false,
 		"process": {
 			"env": {
 				"NODE_ENV": false

@@ -8,6 +8,10 @@ const sourceFiles = [
     "./tests.webpack.js"
 ];
 
+if(enableCoverage) {
+    sourceFiles.push("./src/**/!(*.native|*.test.unit).js");
+}
+
 const supportedBrowsers = {
     chrome : true,
     edge : true,
@@ -42,6 +46,20 @@ if (enableDebug) {
 if (enableCoverage) {
     plugins.push("karma-coverage");
     reporters.push("coverage");
+
+    let babelPluginRule = webPackConfig.module.rules.find((rule) => rule.loader === "babel-loader");
+    babelPluginRule.query.plugins.push(
+        [
+            "istanbul", {
+                "exclude": [
+                    "**/*.test.unit.js",
+                    "**/index.js",
+                    "src/services/api/*",
+                    "src/themes/*"
+                ]
+            }
+        ]
+    );
 }
 
 // Preprocessor information is added for each file.
@@ -70,7 +88,11 @@ module.exports = function(config) {
         singleRun: !enableDebug, // just run once if not in debug mode
         frameworks: ["detectBrowsers", "mocha", "chai", "sinon"], // use the mocha test framework, chai assertion, sinon stubs/spies
         files: sourceFiles,
-        reporters: reporters,
+        exclude: [
+            "./src/App.js",
+            "./src/router/*.js",
+            "./src/**/*.native.js"
+        ],
         plugins: plugins,
         preprocessors: preProcessors,
         browsers: debugModeBrowser,
@@ -94,9 +116,46 @@ module.exports = function(config) {
         webpackServer: {
             noInfo: true //please don't spam the console when running in karma!
         },
-        port: 9876,
-        colors: true,
         logLevel: (enableDebug) ? config.LOG_DEBUG : config.LOG_WARN,
-        autoWatch: true
+        reporters: reporters,
+        coverageReporter: {
+            dir : path.join(__dirname, "tests", "coverage"),
+            includeAllSources: true,
+            instrumenterOptions: {
+                istanbul: {
+                    noCompact: true
+                }
+            },
+            reporters: [
+                {
+                    type: "html",
+                    subdir: "html"
+                },
+                {
+                    type: "cobertura",
+                    subdir: ".",
+                    file: "cobertura-coverage.xml"
+                },
+                {
+                    type: "text"
+                }
+            ],
+            // enforce coverage percentage thresholds
+            // anything under these percentages will cause karma to fail with an exit code of 1 if not running in watch mode
+            check: {
+                global: {
+                    statements: 0,
+                    branches: 0,
+                    functions: 0,
+                    lines: 0
+                },
+                each: {
+                    statements: 0,
+                    branches: 0,
+                    functions: 0,
+                    lines: 0
+                }
+            }
+        }
     })
 };

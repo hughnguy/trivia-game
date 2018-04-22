@@ -14,7 +14,7 @@ export default class AppWrapper extends React.Component {
 
 	render() {
 		return (
-            <Routes/>
+			<Routes/>
 		);
 	}
 }

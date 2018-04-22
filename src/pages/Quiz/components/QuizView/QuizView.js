@@ -45,77 +45,77 @@ const Row = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
+	/**
      * If questions are loading
      */
-    isLoading: PropTypes.bool.isRequired,
-    /**
+	isLoading: PropTypes.bool.isRequired,
+	/**
      * Event handler when answering true
      */
-    onTrueAnswer: PropTypes.func.isRequired,
-    /**
+	onTrueAnswer: PropTypes.func.isRequired,
+	/**
      * Event handler when answering false
      */
-    onFalseAnswer: PropTypes.func.isRequired,
-    /**
+	onFalseAnswer: PropTypes.func.isRequired,
+	/**
      * Current question in quiz
      */
-    currentQuestion: PropTypes.shape({
-        category: PropTypes.string,
-        type: PropTypes.string,
-        question: PropTypes.string,
-        correct_answer: PropTypes.string,
-        incorrect_answers: PropTypes.arrayOf(PropTypes.string)
-    }),
-    /**
+	currentQuestion: PropTypes.shape({
+		category: PropTypes.string,
+		type: PropTypes.string,
+		question: PropTypes.string,
+		correct_answer: PropTypes.string,
+		incorrect_answers: PropTypes.arrayOf(PropTypes.string)
+	}),
+	/**
      * The current step number
      */
-    currentStep: PropTypes.number,
-    /**
+	currentStep: PropTypes.number,
+	/**
      * Total number of questions
      */
-    total: PropTypes.number
+	total: PropTypes.number
 };
 
 //*********************************************************
 // Component
 //*********************************************************
 const QuizView = ({
-    isLoading,
-    currentQuestion,
-    currentStep,
-    total,
-    onTrueAnswer,
-    onFalseAnswer,
+	isLoading,
+	currentQuestion,
+	currentStep,
+	total,
+	onTrueAnswer,
+	onFalseAnswer,
 }) => {
 
-    if(isLoading) {
-        return <Spinner/>;
-    }
+	if(isLoading) {
+		return <Spinner/>;
+	}
 
-    return (
-        <StyledView>
-            <Row>
-                <Title title={currentQuestion.category}/>
-            </Row>
-            <QuestionView>
-                <StyledText>
-                    {currentQuestion.question}
-                </StyledText>
-            </QuestionView>
-            <Row>
-                <StyledText>
-                    {currentStep + 1} of {total}
-                </StyledText>
-            </Row>
-            <Row>
-                <AnswerButtons
-                    onTrueAnswer={onTrueAnswer}
-                    onFalseAnswer={onFalseAnswer}
-                />
-            </Row>
-        </StyledView>
-    );
+	return (
+		<StyledView>
+			<Row>
+				<Title title={currentQuestion.category}/>
+			</Row>
+			<QuestionView>
+				<StyledText>
+					{currentQuestion.question}
+				</StyledText>
+			</QuestionView>
+			<Row>
+				<StyledText>
+					{currentStep + 1} of {total}
+				</StyledText>
+			</Row>
+			<Row>
+				<AnswerButtons
+					onTrueAnswer={onTrueAnswer}
+					onFalseAnswer={onFalseAnswer}
+				/>
+			</Row>
+		</StyledView>
+	);
 };
 
 QuizView.propTypes = propTypes;

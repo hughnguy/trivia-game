@@ -1,6 +1,6 @@
 import * as questionApi from "trivia-game/src/services/api/questionApi";
 import uniquid from "uniquid";
-const Entities = require('html-entities').AllHtmlEntities;
+const Entities = require("html-entities").AllHtmlEntities;
 const entities = new Entities();
 
 //*********************************************************

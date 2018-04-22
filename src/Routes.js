@@ -20,13 +20,13 @@ export const RESULTS_ROUTE = "/results";
 // Routes
 //*********************************************************
 const Routes = () => (
-    <Router>
-        <Switch>
-            <Route exact path={HOME_ROUTE} component={Home}/>
-            <Route exact path={QUIZ_ROUTE} component={Quiz}/>
-            <Route path={RESULTS_ROUTE} component={Results}/>
-        </Switch>
-    </Router>
+	<Router>
+		<Switch>
+			<Route exact path={HOME_ROUTE} component={Home}/>
+			<Route exact path={QUIZ_ROUTE} component={Quiz}/>
+			<Route path={RESULTS_ROUTE} component={Results}/>
+		</Switch>
+	</Router>
 );
 
 export default Routes;

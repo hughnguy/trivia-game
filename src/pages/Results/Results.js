@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { HOME_ROUTE } from "trivia-game/src/Routes";
@@ -47,7 +46,7 @@ const propTypes = {
 //*********************************************************
 // Redux mappings
 //*********************************************************
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
 	isComplete: state.quiz.isComplete,
 	questions: state.quiz.questions,
 	answers: state.quiz.answers,
@@ -82,7 +81,7 @@ export const Results = ({
 			questions={questions}
 			answers={answers}
 			playAgain={playAgain}
-        />
+		/>
 	);
 };
 

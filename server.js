@@ -1,5 +1,5 @@
-var express = require('express');
-var path = require('path');
+var express = require("express");
+var path = require("path");
 
 /* Setup express app */
 var app = express();
@@ -8,11 +8,11 @@ var app = express();
 var port = process.env.PORT || 8000;
 
 /* Set static file location */
-app.use(express.static('./public'));
+app.use(express.static("./public"));
 
 /* Always return the main index.html, so react-router render the route in the client */
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+app.get("*", (req, res) => {
+	res.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
 
 /* Listen */

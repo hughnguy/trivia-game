@@ -1,10 +1,4 @@
-import React, { Component } from "react";
-import {
-	Text,
-	TouchableOpacity,
-	View,
-	ScrollView
-} from "react-native";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 

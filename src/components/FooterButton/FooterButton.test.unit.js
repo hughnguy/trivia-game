@@ -5,16 +5,16 @@ import Button from "trivia-game/src/components/Button/Button";
 
 describe("FooterButton", function() {
 
-    context("when rendering", () => {
+	context("when rendering", () => {
 
-        it("passes title into button", function () {
-            const title = "test";
-            const wrapper = shallow(
-                <FooterButton
-                    title={title}
-                />
-            );
-            assert.equal(wrapper.find(Button).props().title, title);
-        });
-    });
+		it("passes title into button", function () {
+			const title = "test";
+			const wrapper = shallow(
+				<FooterButton
+					title={title}
+				/>
+			);
+			assert.equal(wrapper.find(Button).props().title, title);
+		});
+	});
 });

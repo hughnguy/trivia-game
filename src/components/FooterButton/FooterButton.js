@@ -21,24 +21,24 @@ export const InnerView = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
+	/**
      * Title inside button
      */
-    title: PropTypes.string.isRequired
+	title: PropTypes.string.isRequired
 };
 
 //*********************************************************
 // Component
 //*********************************************************
 const FooterButton = ({
-    title,
-    ...rest
+	title,
+	...rest
 }) => (
-    <OuterView>
-        <InnerView>
-            <Button title={title} {...rest}/>
-        </InnerView>
-    </OuterView>
+	<OuterView>
+		<InnerView>
+			<Button title={title} {...rest}/>
+		</InnerView>
+	</OuterView>
 );
 
 FooterButton.propTypes = propTypes;

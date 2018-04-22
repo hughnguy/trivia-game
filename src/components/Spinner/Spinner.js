@@ -49,19 +49,19 @@ export const StyledSpinner = styled.svg`
 // Component
 //*********************************************************
 const Spinner = ({...rest}) => (
-    <SpinnerView>
-        <StyledSpinner viewBox="0 0 50 50">
-            <circle
-                {...rest}
-                className="path"
-                cx="25"
-                cy="25"
-                r="20"
-                fill="none"
-                strokeWidth="4"
-            />
-        </StyledSpinner>
-    </SpinnerView>
+	<SpinnerView>
+		<StyledSpinner viewBox="0 0 50 50">
+			<circle
+				{...rest}
+				className="path"
+				cx="25"
+				cy="25"
+				r="20"
+				fill="none"
+				strokeWidth="4"
+			/>
+		</StyledSpinner>
+	</SpinnerView>
 );
 
 export default Spinner;

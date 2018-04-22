@@ -23,7 +23,7 @@ import quiz from "trivia-game/src/redux/modules/quiz";
 // Root reducer
 //*********************************************************
 const rootReducer = combineReducers({
-	quiz
+	quiz: quiz
 });
 
 //*********************************************************

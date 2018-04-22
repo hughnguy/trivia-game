@@ -1,2 +1,2 @@
-import AnswerButtons from './AnswerButtons';
+import AnswerButtons from "./AnswerButtons";
 export default AnswerButtons;

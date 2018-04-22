@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import * as GLOBAL from "trivia-game/src/globals.js";
 import {
-    Text,
-    View,
-    TouchableOpacity
+	Text,
+	View,
+	TouchableOpacity
 } from "react-native";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -37,44 +37,44 @@ const StyledText = styled.Text`
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
+	/**
      * Event handler for starting the game
      */
-    onBegin: PropTypes.func.isRequired,
-    /**
+	onBegin: PropTypes.func.isRequired,
+	/**
      * High score for the game
      */
-    highScore: PropTypes.number.isRequired
+	highScore: PropTypes.number.isRequired
 };
 
 //*********************************************************
 // Component
 //*********************************************************
 const HomeView = ({onBegin, highScore}) => (
-    <StyledView>
-        <Row>
-            <Title title="Welcome to the Trivia Challenge!"/>
-        </Row>
-        <Row>
-            <StyledText>
+	<StyledView>
+		<Row>
+			<Title title="Welcome to the Trivia Challenge!"/>
+		</Row>
+		<Row>
+			<StyledText>
                 You will be presented with {GLOBAL.NUMBER_QUESTIONS} True or False questions.
-            </StyledText>
-        </Row>
-        <Row>
-            <StyledText>
+			</StyledText>
+		</Row>
+		<Row>
+			<StyledText>
                 Can you score 100%?
-            </StyledText>
-        </Row>
-        <Row>
-            <StyledText>
+			</StyledText>
+		</Row>
+		<Row>
+			<StyledText>
                 High Score: {highScore}
-            </StyledText>
-        </Row>
-        <FooterButton
-            title="Begin"
-            onPress={onBegin}
-        />
-    </StyledView>
+			</StyledText>
+		</Row>
+		<FooterButton
+			title="Begin"
+			onPress={onBegin}
+		/>
+	</StyledView>
 );
 
 HomeView.propTypes = propTypes;

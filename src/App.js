@@ -11,16 +11,16 @@ import store, { persistor } from "trivia-game/src/redux/store";
 // Root component
 //*********************************************************
 const App = () => (
-    <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-            <ThemeProvider theme={themes.lightTheme}>
-                <AppWrapper/>
-            </ThemeProvider>
-        </PersistGate>
-    </Provider>
+	<Provider store={store}>
+		<PersistGate loading={null} persistor={persistor}>
+			<ThemeProvider theme={themes.lightTheme}>
+				<AppWrapper/>
+			</ThemeProvider>
+		</PersistGate>
+	</Provider>
 );
 
 ReactDOM.render(
-    <App/>,
-    document.getElementById("root")
+	<App/>,
+	document.getElementById("root")
 );

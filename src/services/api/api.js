@@ -1,5 +1,3 @@
-import * as GLOBAL from "trivia-game/src/globals";
-
 export async function request(url, requestInfo) {
 
 	/* Send http request */

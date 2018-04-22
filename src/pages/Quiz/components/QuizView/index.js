@@ -1,2 +1,2 @@
-import QuizView from './QuizView';
+import QuizView from "./QuizView";
 export default QuizView;

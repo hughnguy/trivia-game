@@ -39,44 +39,44 @@ export const HighScoreText = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
+	/**
      * Event handler for starting the game
      */
-    onBegin: PropTypes.func.isRequired,
-    /**
+	onBegin: PropTypes.func.isRequired,
+	/**
      * High score for the game
      */
-    highScore: PropTypes.number.isRequired
+	highScore: PropTypes.number.isRequired
 };
 
 //*********************************************************
 // Component
 //*********************************************************
 const HomeView = ({onBegin, highScore}) => (
-    <StyledView>
-        <Row>
-            <Title title="Welcome to the Trivia Challenge!"/>
-        </Row>
-        <Row>
-            <StyledText>
+	<StyledView>
+		<Row>
+			<Title title="Welcome to the Trivia Challenge!"/>
+		</Row>
+		<Row>
+			<StyledText>
                 You will be presented with {GLOBAL.NUMBER_QUESTIONS} True or False questions.
-            </StyledText>
-        </Row>
-        <Row>
-            <StyledText>
+			</StyledText>
+		</Row>
+		<Row>
+			<StyledText>
                 Can you score 100%?
-            </StyledText>
-        </Row>
-        <Row>
-            <HighScoreText>
+			</StyledText>
+		</Row>
+		<Row>
+			<HighScoreText>
                 High Score: {highScore}
-            </HighScoreText>
-        </Row>
-        <FooterButton
-            title="Begin"
-            onClick={onBegin}
-        />
-    </StyledView>
+			</HighScoreText>
+		</Row>
+		<FooterButton
+			title="Begin"
+			onClick={onBegin}
+		/>
+	</StyledView>
 );
 
 HomeView.propTypes = propTypes;

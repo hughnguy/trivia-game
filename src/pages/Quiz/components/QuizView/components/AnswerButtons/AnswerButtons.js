@@ -26,28 +26,28 @@ const ButtonContainer = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
+	/**
      * Event handler on answering true
      */
-    onTrueAnswer: PropTypes.func.isRequired,
-    /**
+	onTrueAnswer: PropTypes.func.isRequired,
+	/**
      * Event handler on answering false
      */
-    onFalseAnswer: PropTypes.func.isRequired
+	onFalseAnswer: PropTypes.func.isRequired
 };
 
 //*********************************************************
 // Component
 //*********************************************************
 const AnswerButtons = ({onTrueAnswer, onFalseAnswer})  => (
-    <ButtonView>
-        <ButtonContainer>
-            <Button title="True" onClick={onTrueAnswer}/>
-        </ButtonContainer>
-        <ButtonContainer>
-            <Button title="False" onClick={onFalseAnswer}/>
-        </ButtonContainer>
-    </ButtonView>
+	<ButtonView>
+		<ButtonContainer>
+			<Button title="True" onClick={onTrueAnswer}/>
+		</ButtonContainer>
+		<ButtonContainer>
+			<Button title="False" onClick={onFalseAnswer}/>
+		</ButtonContainer>
+	</ButtonView>
 );
 
 AnswerButtons.propTypes = propTypes;

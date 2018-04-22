@@ -15,47 +15,47 @@ const { Redirect } = Routing;
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
+	/**
      * History object provided by router
      */
-    history: PropTypes.object.isRequired,
-    /**
+	history: PropTypes.object.isRequired,
+	/**
      * High score for the game
      */
-    highScore: PropTypes.number.isRequired,
-    /**
+	highScore: PropTypes.number.isRequired,
+	/**
      * Flag to auto-resume game if questions have been previously loaded
      */
-    resumeGame: PropTypes.bool.isRequired
+	resumeGame: PropTypes.bool.isRequired
 };
 
 //*********************************************************
 // Redux mappings
 //*********************************************************
 const mapStateToProps = (state, ownProps) => ({
-    highScore: state.quiz.highScore,
-    resumeGame: areQuestionsLoaded(state)
+	highScore: state.quiz.highScore,
+	resumeGame: areQuestionsLoaded(state)
 });
 
 //*********************************************************
 // Component
 //*********************************************************
 export const Home = ({
-    history,
-    highScore,
-    resumeGame
+	history,
+	highScore,
+	resumeGame
 }) => {
 
-    if(resumeGame) {
-        return <Redirect to={QUIZ_ROUTE}/>;
-    }
+	if(resumeGame) {
+		return <Redirect to={QUIZ_ROUTE}/>;
+	}
 
-    return (
-        <HomeView
-            onBegin={() => history.push(QUIZ_ROUTE)}
-            highScore={highScore}
-        />
-    );
+	return (
+		<HomeView
+			onBegin={() => history.push(QUIZ_ROUTE)}
+			highScore={highScore}
+		/>
+	);
 };
 
 Home.propTypes = propTypes;

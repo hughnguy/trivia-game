@@ -37,7 +37,7 @@ module.exports = (env) => ({
 	resolve: {
 		modules: [
 			path.resolve(__dirname, ".."),
-			path.resolve('./node_modules')
+			path.resolve("./node_modules")
 		],
 		alias: {
 			"styled-components": path.resolve(__dirname, "node_modules", "styled-components")
@@ -72,8 +72,8 @@ module.exports = (env) => ({
 			exclude: ["js/vendor.js"]
 		}),
 		new webpack.DefinePlugin({
-			'process.env':{
-				'NODE_ENV': env && env.production ? JSON.stringify("production") : JSON.stringify("development")
+			"process.env":{
+				"NODE_ENV": env && env.production ? JSON.stringify("production") : JSON.stringify("development")
 			}
 		}),
 		new webpack.optimize.CommonsChunkPlugin({

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import {
-    View,
-    ActivityIndicator
+	View,
+	ActivityIndicator
 } from "react-native";
 
 //*********************************************************
@@ -18,9 +18,9 @@ const SpinnerView = styled.View`
 // Component
 //*********************************************************
 const Spinner = ({...rest}) => (
-    <SpinnerView>
-        <ActivityIndicator size="large" color="#19ADD8" {...rest}/>
-    </SpinnerView>
+	<SpinnerView>
+		<ActivityIndicator size="large" color="#19ADD8" {...rest}/>
+	</SpinnerView>
 );
 
 export default Spinner;

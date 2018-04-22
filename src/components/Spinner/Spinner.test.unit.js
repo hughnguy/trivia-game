@@ -4,13 +4,13 @@ import Spinner from "trivia-game/src/components/Spinner/Spinner";
 
 describe("Spinner", function() {
 
-    context("when rendering", () => {
+	context("when rendering", () => {
 
-        it("displays a circle svg", function () {
-            const wrapper = shallow(
-                <Spinner/>
-            );
-            assert.isTrue(wrapper.find("circle").exists());
-        });
-    });
+		it("displays a circle svg", function () {
+			const wrapper = shallow(
+				<Spinner/>
+			);
+			assert.isTrue(wrapper.find("circle").exists());
+		});
+	});
 });

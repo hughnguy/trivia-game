@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import * as GLOBAL from "trivia-game/src/globals.js";
 import PropTypes from "prop-types";
-import styled from "styled-components";
 import { connect } from "react-redux";
 import { RESULTS_ROUTE } from "trivia-game/src/Routes";
 import { loadQuestions, answerQuestion, areQuestionsLoaded, getCurrentQuestion, getTotalNumberOfQuestions } from "trivia-game/src/redux/modules/quiz";
@@ -57,7 +56,7 @@ const propTypes = {
 //*********************************************************
 // Redux mappings
 //*********************************************************
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
 	isLoading: state.quiz.isLoading,
 	isComplete: state.quiz.isComplete,
 	currentStep: state.quiz.currentStep,

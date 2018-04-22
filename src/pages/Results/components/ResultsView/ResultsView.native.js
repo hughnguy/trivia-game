@@ -1,15 +1,8 @@
-import React, { Component } from "react";
-import {
-	View,
-	ScrollView
-} from "react-native";
+import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import Title from "trivia-game/src/components/Title/Title";
-import Button from "trivia-game/src/components/Button/Button";
 import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
-import { getNumberCorrect, getTotalNumberOfQuestions, playAgain } from "trivia-game/src/redux/modules/quiz";
 import ResultsList from "trivia-game/src/pages/Results/components/ResultsView/components/ResultsList/ResultsList";
 
 //*********************************************************

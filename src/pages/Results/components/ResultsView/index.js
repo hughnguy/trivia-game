@@ -1,2 +1,2 @@
-import ResultsView from './ResultsView';
+import ResultsView from "./ResultsView";
 export default ResultsView;

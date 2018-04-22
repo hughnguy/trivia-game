@@ -15,22 +15,22 @@ export const StyledText = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
+	/**
      * Title value
      */
-    title: PropTypes.string.isRequired
+	title: PropTypes.string.isRequired
 };
 
 //*********************************************************
 // Component
 //*********************************************************
 const Title = ({
-    title,
-    ...rest
+	title,
+	...rest
 }) => (
-    <StyledText {...rest}>
-        {title}
-    </StyledText>
+	<StyledText {...rest}>
+		{title}
+	</StyledText>
 );
 
 Title.propTypes = propTypes;
