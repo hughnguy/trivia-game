@@ -144,16 +144,16 @@ module.exports = function(config) {
             // anything under these percentages will cause karma to fail with an exit code of 1 if not running in watch mode
             check: {
                 global: {
-                    statements: 0,
-                    branches: 0,
-                    functions: 0,
-                    lines: 0
+                    statements: 90,
+                    branches: 90,
+                    functions: 90,
+                    lines: 90
                 },
                 each: {
-                    statements: 0,
-                    branches: 0,
-                    functions: 0,
-                    lines: 0
+                    statements: 80,
+                    branches: 50,
+                    functions: 80,
+                    lines: 80
                 }
             }
         }
