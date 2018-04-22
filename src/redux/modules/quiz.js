@@ -107,6 +107,13 @@ export default function reducer(state = initialState, action = {}) {
 // Selectors
 //*********************************************************
 /**
+ * Checks if questions are loaded
+ */
+export function areQuestionsLoaded({quiz}) {
+	return (quiz.questions.length !== 0);
+}
+
+/**
  * Returns the current question from step in quiz
  */
 export function getCurrentQuestion({quiz}) {

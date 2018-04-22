@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { RESULTS_ROUTE } from "trivia-game/src/Routes";
-import { loadQuestions, answerQuestion, getCurrentQuestion, getTotalNumberOfQuestions } from "trivia-game/src/redux/modules/quiz";
+import { loadQuestions, answerQuestion, areQuestionsLoaded, getCurrentQuestion, getTotalNumberOfQuestions } from "trivia-game/src/redux/modules/quiz";
 import QuizView from "trivia-game/src/pages/Quiz/components/QuizView/QuizView";
 import Routing from "trivia-game/src/router";
 const { Redirect } = Routing;
@@ -63,7 +63,7 @@ const mapStateToProps = (state, ownProps) => ({
 	currentStep: state.quiz.currentStep,
 	currentQuestion: getCurrentQuestion(state),
 	total: getTotalNumberOfQuestions(state),
-	areQuestionsLoaded: (state.quiz.questions.length !== 0)
+	areQuestionsLoaded: areQuestionsLoaded(state)
 });
 
 const mapDispatchToProps = {
