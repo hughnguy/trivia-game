@@ -4,10 +4,18 @@ const webPackConfig = require("./webpack.config")();
 const enableDebug = process.argv.indexOf("--debug") !== -1;
 const enableCoverage = process.argv.indexOf("--coverage") !== -1;
 
-// All JavaScript source files and test files
 const sourceFiles = [
-    "./src/**/*.test.unit.js"
+    "./tests.webpack.js"
 ];
+
+const supportedBrowsers = {
+    chrome : true,
+    edge : true,
+    firefox : true,
+    safari : true
+};
+
+const debugModeBrowser = ["Chrome"];
 
 const plugins = [
     "karma-detect-browsers",
@@ -53,65 +61,42 @@ if (enableDebug) {
     webPackConfig.devtool = "eval-source-map";
 }
 
+// Remove common chunks plugin
+const commonsChunkPluginIndex = webPackConfig.plugins.findIndex(plugin => plugin.chunkNames);
+webPackConfig.plugins.splice(commonsChunkPluginIndex, 1);
+
 module.exports = function(config) {
     config.set({
         singleRun: !enableDebug, // just run once if not in debug mode
         frameworks: ["detectBrowsers", "mocha", "chai", "sinon"], // use the mocha test framework, chai assertion, sinon stubs/spies
         files: sourceFiles,
-
         reporters: reporters,
         plugins: plugins,
-
         preprocessors: preProcessors,
-
+        browsers: debugModeBrowser,
         detectBrowsers: {
-            usePhantomJS: false
-        },
-
-        webpack: { //kind of a copy of your webpack config
-            module: {
-                rules: [
-                    {
-                        test: /\.js$/,
-                        loader: "babel-loader",
-                        query: {
-                            cacheDirectory: true,
-                            presets: ["es2015", "react"],
-                            plugins: [
-                                "babel-plugin-styled-components",
-                                "react-html-attrs",
-                                "transform-class-properties",
-                                "transform-object-rest-spread"
-                            ]
-                        }
-                    },
-                    {
-                        test: /\.css$/,
-                        use: ["style-loader", "css-loader"]
-                    }
-                ]
-            },
-            externals: {
-                cheerio: 'window',
-                'react/addons': 'react',
-                'react/lib/ExecutionEnvironment': 'react',
-                'react/lib/ReactContext': 'react'
+            enabled: !enableDebug && !enableCoverage,
+            usePhantomJS: false,
+            postDetection: function(availableBrowsers) { // only include supported browsers
+                const testBrowsers = availableBrowsers.filter((browser) => supportedBrowsers[browser.toLowerCase()]);
+                console.log("Testing on the following supported browsers: ", testBrowsers);
+                return testBrowsers;
             }
         },
-
+        client: {
+            mocha: {
+                reporter: "html",
+                timeout : 2000,
+                ui: "bdd"
+            }
+        },
+        webpack: webPackConfig,
         webpackServer: {
             noInfo: true //please don't spam the console when running in karma!
-        },
-
-        babelPreprocessor: {
-            options: {
-                presets: ['airbnb']
-            }
         },
         port: 9876,
         colors: true,
         logLevel: (enableDebug) ? config.LOG_DEBUG : config.LOG_WARN,
-        autoWatch: true,
-        browsers: ['Chrome']
+        autoWatch: true
     })
 };

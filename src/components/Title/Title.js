@@ -5,7 +5,7 @@ import styled from "styled-components";
 //*********************************************************
 // Styles
 //*********************************************************
-const StyledText = styled.div`
+export const StyledText = styled.div`
     color: white;
     text-align: center;
     font-size: 40px;

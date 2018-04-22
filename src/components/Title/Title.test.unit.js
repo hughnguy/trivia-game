@@ -1,17 +1,17 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Button, { StyledText } from "trivia-game/src/components/Button/Button";
+import Title, { StyledText } from "trivia-game/src/components/Title/Title";
 
-describe("Button", function() {
+describe("Title", function() {
 
     context("when rendering", () => {
 
         it("displays a title", function () {
             const title = "test";
             const wrapper = shallow(
-                <Button
+                <Title
                     title={title}
-                />
+                    />
             );
             assert.equal(wrapper.find(StyledText).props().children, title)
         });

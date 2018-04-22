@@ -5,7 +5,7 @@ import styled from "styled-components";
 //*********************************************************
 // Styles
 //*********************************************************
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
 	flex: 1;
     background-color: #e8544e;
     padding-horizontal: 12px;
@@ -14,7 +14,7 @@ const StyledButton = styled.button`
     cursor: pointer;
 `;
 
-const StyledText = styled.div`
+export const StyledText = styled.div`
     color: white;
     text-align: center;
     font-size: 30px;

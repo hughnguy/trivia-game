@@ -74,7 +74,7 @@ const mapDispatchToProps = {
 //*********************************************************
 // Component
 //*********************************************************
-class Quiz extends Component {
+export class Quiz extends Component {
 
 	async componentDidMount() {
 		const { loadQuestions, areQuestionsLoaded } = this.props;

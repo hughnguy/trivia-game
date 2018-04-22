@@ -76,10 +76,16 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js",
+
     "watch": "webpack --watch -d",
     "build-js": "webpack",
     "build-js-prod": "npm run build-js -- --env.production",
-    "karma": "karma start karma.conf.js"
+    "karma": "karma start karma.conf.js",
+    "unit-test": "npm run karma",
+    "unit-test-debug": "npm run karma -- --debug",
+    "lint-css": "stylelint src/**/*.js",
+    "lint-js": "eslint .",
+    "lint": "npm run lint-css && npm run lint-js"
   },
   "jest": {
     "preset": "jest-expo"

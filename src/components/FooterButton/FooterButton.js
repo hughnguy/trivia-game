@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Button from "trivia-game/src/components/Button/Button";
+import Button from "trivia-game/src/components/Button";
 
 //*********************************************************
 // Styles
 //*********************************************************
-const OuterView = styled.div`
+export const OuterView = styled.div`
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 `;
 
-const InnerView = styled.div`
+export const InnerView = styled.div`
 	flex-direction: row;
 	display: flex;
 `;

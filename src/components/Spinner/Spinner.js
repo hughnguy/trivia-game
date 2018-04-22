@@ -4,7 +4,7 @@ import styled from "styled-components";
 //*********************************************************
 // Styles
 //*********************************************************
-const SpinnerView = styled.div`
+export const SpinnerView = styled.div`
     height: 100vh;
     display: flex;
 	flex: 1;
@@ -12,7 +12,7 @@ const SpinnerView = styled.div`
 	justify-content: center;
 `;
 
-const StyledSpinner = styled.svg`
+export const StyledSpinner = styled.svg`
     animation: rotate 2s linear infinite;
     margin: -25px 0 0 -25px;
     width: 50px;

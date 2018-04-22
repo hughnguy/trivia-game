@@ -1,21 +1,29 @@
 import * as GLOBAL from "trivia-game/src/globals";
 
-export function request(url, requestInfo) {
+export async function request(url, requestInfo) {
 
 	/* Send http request */
-	return fetch(url, requestInfo).then(response => {
+	let response;
+	try {
+		response = await fetch(url, requestInfo);
+	} catch(err) {
+		throw "Request failed: " + JSON.stringify(err);
+	}
 
-		return response.text().then(data => {
+	/* Get response */
+	let data;
+	try {
+		data = await response.text();
+	} catch(err) {
+		throw "Failed to retrieve text: " + JSON.stringify(err);
+	}
 
-			/* Check valid json */
-			try {
-				data = JSON.parse(data);
+	/* Check valid json */
+	try {
+		data = JSON.parse(data);
+	} catch(err) {
+		throw "Unable to parse json response";
+	}
 
-			} catch(err) {
-
-				throw "Unable to parse json response";
-			}
-			return data;
-		});
-	});
+	return data;
 }

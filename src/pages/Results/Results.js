@@ -62,7 +62,7 @@ const mapDispatchToProps = {
 //*********************************************************
 // Component
 //*********************************************************
-const Results = ({
+export const Results = ({
 	isComplete,
 	score,
 	total,

@@ -40,7 +40,7 @@ const mapStateToProps = (state, ownProps) => ({
 //*********************************************************
 // Component
 //*********************************************************
-const Home = ({
+export const Home = ({
     history,
     highScore,
     resumeGame

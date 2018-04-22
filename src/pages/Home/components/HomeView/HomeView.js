@@ -8,14 +8,14 @@ import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
 //*********************************************************
 // Styles
 //*********************************************************
-const StyledView = styled.div`
+export const StyledView = styled.div`
     height: 100vh;
 	flex: 1;
 	flex-direction: column;
 	background-color: #353692;
 `;
 
-const Row = styled.div`
+export const Row = styled.div`
 	flex: 1;
 	flex-direction: column;
 	justify-content: center;
@@ -23,9 +23,15 @@ const Row = styled.div`
 	padding: 20px;
 `;
 
-const StyledText = styled.div`
+export const StyledText = styled.div`
 	color: white;
-	font-size: 20;
+	font-size: 20px;
+	text-align: center;
+`;
+
+export const HighScoreText = styled.div`
+	color: white;
+	font-size: 25px;
 	text-align: center;
 `;
 
@@ -62,9 +68,9 @@ const HomeView = ({onBegin, highScore}) => (
             </StyledText>
         </Row>
         <Row>
-            <StyledText>
+            <HighScoreText>
                 High Score: {highScore}
-            </StyledText>
+            </HighScoreText>
         </Row>
         <FooterButton
             title="Begin"

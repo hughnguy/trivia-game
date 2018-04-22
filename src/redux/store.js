@@ -1,12 +1,18 @@
 import {
 	createStore,
 	applyMiddleware,
-	combineReducers
+	combineReducers,
+	compose
 } from "redux";
 import thunk from "redux-thunk";
 import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+
+//*********************************************************
+// Dev tools
+//*********************************************************
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 //*********************************************************
 // Reducers
@@ -21,7 +27,7 @@ const rootReducer = combineReducers({
 });
 
 //*********************************************************
-// Local persist settings
+// Persist store settings
 //*********************************************************
 export const rootPersistConfig = {
 	key: "root",
@@ -34,7 +40,9 @@ export const rootPersistConfig = {
 //*********************************************************
 const store = createStore(
 	persistReducer(rootPersistConfig, rootReducer),
-    applyMiddleware(thunk)
+	composeEnhancers(
+		applyMiddleware(thunk)
+	)
 );
 
 //*********************************************************

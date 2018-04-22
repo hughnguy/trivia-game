@@ -9,7 +9,19 @@ const PATHS = {
 module.exports = (env) => ({
 	entry: {
 		vendor: [
-			"react"
+			"history",
+			"prop-types",
+			"react",
+			"react-dom",
+			"react-redux",
+			"react-router",
+			"react-router-dom",
+			"redux",
+			"redux-persist",
+			"html-entities",
+			"redux-thunk",
+			"styled-components",
+			"uniquid"
 		],
 		app: [
 			"babel-polyfill",
