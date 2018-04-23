@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import HomeView, { HighScoreText } from "trivia-game/src/pages/Home/components/HomeView/HomeView";
+import HomeView from "trivia-game/src/pages/Home/components/HomeView/HomeView";
 
 describe("HomeView", function() {
 

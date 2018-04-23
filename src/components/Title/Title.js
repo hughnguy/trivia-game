@@ -6,9 +6,9 @@ import styled from "styled-components";
 // Styles
 //*********************************************************
 export const StyledText = styled.div`
-    color: white;
-    text-align: center;
-    font-size: 40px;
+	color: white;
+	text-align: center;
+	font-size: 40px;
 `;
 
 //*********************************************************
@@ -16,8 +16,8 @@ export const StyledText = styled.div`
 //*********************************************************
 const propTypes = {
 	/**
-     * Title value
-     */
+	 * Title value
+	 */
 	title: PropTypes.string.isRequired
 };
 

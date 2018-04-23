@@ -6,7 +6,7 @@ import styled from "styled-components";
 // Styles
 //*********************************************************
 const ResultListView = styled.View`
-	flexDirection: column;
+	flex-direction: column;
 	padding: 10px;
 	margin-bottom: ${({isLast}) => isLast ? "100px" : "10px"};
 `;

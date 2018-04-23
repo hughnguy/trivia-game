@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import * as GLOBAL from "trivia-game/src/globals.js";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -10,7 +10,7 @@ import strings from "trivia-game/src/strings";
 // Styles
 //*********************************************************
 export const StyledView = styled.div`
-    height: 100vh;
+	height: 100vh;
 	flex: 1;
 	flex-direction: column;
 	background-color: #353692;
@@ -41,12 +41,12 @@ export const HighScoreText = styled.div`
 //*********************************************************
 const propTypes = {
 	/**
-     * Event handler for starting the game
-     */
+	 * Event handler for starting the game
+	 */
 	onBegin: PropTypes.func.isRequired,
 	/**
-     * High score for the game
-     */
+	 * High score for the game
+	 */
 	highScore: PropTypes.number.isRequired
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import StyledComponents, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import AppWrapper from "trivia-game/src/AppWrapper";
 import themes from "trivia-game/src/themes/themes";
 import store, { persistor } from "trivia-game/src/redux/store";

@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import * as GLOBAL from "trivia-game/src/globals.js";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Title from "trivia-game/src/components/Title";
@@ -10,7 +9,7 @@ import Spinner from "trivia-game/src/components/Spinner";
 // Styles
 //*********************************************************
 const StyledView = styled.div`
-    height: 100vh;
+	height: 100vh;
 	flex: 1;
 	flex-direction: column;
 	background-color: #43ade4;
@@ -46,20 +45,20 @@ const Row = styled.div`
 //*********************************************************
 const propTypes = {
 	/**
-     * If questions are loading
-     */
+	 * If questions are loading
+	 */
 	isLoading: PropTypes.bool.isRequired,
 	/**
-     * Event handler when answering true
-     */
+	 * Event handler when answering true
+	 */
 	onTrueAnswer: PropTypes.func.isRequired,
 	/**
-     * Event handler when answering false
-     */
+	 * Event handler when answering false
+	 */
 	onFalseAnswer: PropTypes.func.isRequired,
 	/**
-     * Current question in quiz
-     */
+	 * Current question in quiz
+	 */
 	currentQuestion: PropTypes.shape({
 		category: PropTypes.string,
 		type: PropTypes.string,
@@ -68,12 +67,12 @@ const propTypes = {
 		incorrect_answers: PropTypes.arrayOf(PropTypes.string)
 	}),
 	/**
-     * The current step number
-     */
+	 * The current step number
+	 */
 	currentStep: PropTypes.number,
 	/**
-     * Total number of questions
-     */
+	 * Total number of questions
+	 */
 	total: PropTypes.number
 };
 

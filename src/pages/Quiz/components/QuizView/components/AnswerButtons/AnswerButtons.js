@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Button from "trivia-game/src/components/Button/Button";
@@ -8,8 +8,8 @@ import strings from "trivia-game/src/strings";
 // Styles
 //*********************************************************
 const ButtonView = styled.div`
-    margin-top: 50px;
-    display: flex;
+	margin-top: 50px;
+	display: flex;
 	flex: 1;
 	align-items: center;
 	justify-content: center;
@@ -17,7 +17,7 @@ const ButtonView = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-    display: flex;
+	display: flex;
 	flex: 1;
 	flex-direction: row;
 	margin: 5px;
@@ -28,12 +28,12 @@ const ButtonContainer = styled.div`
 //*********************************************************
 const propTypes = {
 	/**
-     * Event handler on answering true
-     */
+	 * Event handler on answering true
+	 */
 	onTrueAnswer: PropTypes.func.isRequired,
 	/**
-     * Event handler on answering false
-     */
+	 * Event handler on answering false
+	 */
 	onFalseAnswer: PropTypes.func.isRequired
 };
 

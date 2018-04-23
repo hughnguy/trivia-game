@@ -1,12 +1,8 @@
-import React, { Component } from "react";
-import * as GLOBAL from "trivia-game/src/globals.js";
+import React  from "react";
 import { QUIZ_ROUTE } from "trivia-game/src/Routes";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import styled from "styled-components";
-import Title from "trivia-game/src/components/Title/Title";
 import { areQuestionsLoaded } from "trivia-game/src/redux/modules/quiz";
-import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
 import HomeView from "trivia-game/src/pages/Home/components/HomeView";
 import Routing from "trivia-game/src/router";
 const { Redirect } = Routing;
@@ -32,7 +28,7 @@ const propTypes = {
 //*********************************************************
 // Redux mappings
 //*********************************************************
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
 	highScore: state.quiz.highScore,
 	resumeGame: areQuestionsLoaded(state)
 });

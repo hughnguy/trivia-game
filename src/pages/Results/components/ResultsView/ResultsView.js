@@ -10,8 +10,8 @@ import ResultsList from "trivia-game/src/pages/Results/components/ResultsView/co
 // Styles
 //*********************************************************
 const StyledView = styled.div`
-    height: 100vh;
-    overflow: scroll;
+	height: 100vh;
+	overflow: scroll;
 	flex: 1;
 	flex-direction: column;
 	background-color: #115492;
@@ -47,8 +47,8 @@ const ResultInner = styled.div`
 //*********************************************************
 const propTypes = {
 	/**
-     * Array of questions loaded from server
-     */
+	 * Array of questions loaded from server
+	 */
 	questions: PropTypes.arrayOf(PropTypes.shape({
 		category: PropTypes.string,
 		type: PropTypes.string,
@@ -57,20 +57,20 @@ const propTypes = {
 		incorrect_answers: PropTypes.arrayOf(PropTypes.string)
 	})).isRequired,
 	/**
-     * Key value map of answers for each question
-     */
+	 * Key value map of answers for each question
+	 */
 	answers: PropTypes.object.isRequired,
 	/**
-     * Number of correct answers
-     */
+	 * Number of correct answers
+	 */
 	score: PropTypes.number.isRequired,
 	/**
-     * Total number of questions
-     */
+	 * Total number of questions
+	 */
 	total: PropTypes.number.isRequired,
 	/**
-     * Restarts the quiz
-     */
+	 * Restarts the quiz
+	 */
 	playAgain: PropTypes.func.isRequired
 };
 

@@ -1,10 +1,4 @@
-import React, { Component } from "react";
-import * as GLOBAL from "trivia-game/src/globals.js";
-import {
-	Text,
-	View,
-	ActivityIndicator
-} from "react-native";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Title from "trivia-game/src/components/Title";

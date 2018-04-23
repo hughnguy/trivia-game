@@ -7,17 +7,16 @@ import styled from "styled-components";
 //*********************************************************
 export const StyledButton = styled.button`
 	flex: 1;
-    background-color: #e8544e;
-    padding-horizontal: 12px;
-    padding-vertical: 8px;
-    border-radius: 2px;
-    cursor: pointer;
+	background-color: #e8544e;
+	padding: 8px 12px;
+	border-radius: 2px;
+	cursor: pointer;
 `;
 
 export const StyledText = styled.div`
-    color: white;
-    text-align: center;
-    font-size: 30px;
+	color: white;
+	text-align: center;
+	font-size: 30px;
 `;
 
 //*********************************************************
@@ -25,8 +24,8 @@ export const StyledText = styled.div`
 //*********************************************************
 const propTypes = {
 	/**
-     * Title inside button
-     */
+	 * Title inside button
+	 */
 	title: PropTypes.string.isRequired
 };
 

@@ -1,7 +1,4 @@
 import React from "react";
-import {
-	Text,
-} from "react-native";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -9,9 +6,9 @@ import styled from "styled-components";
 // Styles
 //*********************************************************
 const StyledText = styled.Text`
-    color: white;
-    text-align: center;
-    font-size: 40px;
+	color: white;
+	text-align: center;
+	font-size: 40px;
 `;
 
 //*********************************************************
