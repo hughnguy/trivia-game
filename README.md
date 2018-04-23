@@ -2,19 +2,24 @@
 
 This project is a react trivia game application.
 
-Technology stack:
-* Platform agnostic react modules (react + react native)
-* Nodejs web server
-* Styled-components for css styling
-* Redux for state management
-* Redux-persist for persisting store into local storage
-* Karma as a test runner
-* Enzyme for react unit tests
-* Mocha as test framework
-* Chai for assertions
-* Sinon for spies/stubs
+# v2 updates:
+
+* Platform agnostic react modules! React native will import *.native.js and web react will import *.js. We can increase the granularity by specifying *.ios.js or *.android.js files as well. index.js is also present in all modules now so you can just import the directory instead of file.
+* Updated the readme. Feel free to check out the instructions below on running the web app.
+* Moved all business logic and state management into redux. Added selectors to query state from the store (if there were any expensive calculations/filtering id wrap them in https://github.com/reactjs/reselect)
+* Converted all components to functional stateless ones (only Home.js needs a lifecycle method to make an api call on mount)
+* The page components Home, Quiz, and Result now act strictly as containers connected to redux whereas everything else is presentational. These containers are reused in both react web/react native.
+* Replaced promise chains with async/await.
+* Decoded the html entities
+* Fixed loop key anti pattern
+* Added a few unit test examples (co-located with components) using enzyme, mocha, chai, sinon, and karma as the test runner
+* Added code coverage reporter (I could write more tests to increase coverage but this is an example of how we can fail a build if the percentages do not reach the thresholds)
+* Use ThemeProvider by styled-components
+* Externalized all UI strings
+* Redux store is now persisted into web local storage or react native asyncstorage. The game will resume even if you exit the app.
+* Added linter for javascript and css
+* Nodejs to serve the web app
 * Webpack for bundling assets
-* Eslint + Stylelint
 
 ## Setup
 
