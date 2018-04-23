@@ -33,14 +33,14 @@ const StyledText = styled.Text`
 // PropTypes
 //*********************************************************
 const propTypes = {
-	/**
+    /**
      * Event handler for starting the game
      */
-	onBegin: PropTypes.func.isRequired,
-	/**
+    onBegin: PropTypes.func.isRequired,
+    /**
      * High score for the game
      */
-	highScore: PropTypes.number.isRequired
+    highScore: PropTypes.number.isRequired
 };
 
 //*********************************************************

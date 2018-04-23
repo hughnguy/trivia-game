@@ -25,20 +25,20 @@ const ResultListAnswer = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-	/**
+    /**
      * Key value map of answer for each question id
      */
-	answers: PropTypes.object.isRequired,
-	/**
+    answers: PropTypes.object.isRequired,
+    /**
      * Array of questions
      */
-	questions: PropTypes.arrayOf(PropTypes.shape({
-		category: PropTypes.string,
-		type: PropTypes.string,
-		question: PropTypes.string,
-		correct_answer: PropTypes.string,
-		incorrect_answers: PropTypes.arrayOf(PropTypes.string)
-	})).isRequired
+    questions: PropTypes.arrayOf(PropTypes.shape({
+        category: PropTypes.string,
+        type: PropTypes.string,
+        question: PropTypes.string,
+        correct_answer: PropTypes.string,
+        incorrect_answers: PropTypes.arrayOf(PropTypes.string)
+    })).isRequired
 };
 
 //*********************************************************

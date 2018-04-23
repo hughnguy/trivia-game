@@ -11,15 +11,15 @@ const { Redirect } = Routing;
 // PropTypes
 //*********************************************************
 const propTypes = {
-	/**
+    /**
      * History object provided by router
      */
 	history: PropTypes.object.isRequired,
-	/**
+    /**
      * High score for the game
      */
 	highScore: PropTypes.number.isRequired,
-	/**
+    /**
      * Flag to auto-resume game if questions have been previously loaded
      */
 	resumeGame: PropTypes.bool.isRequired

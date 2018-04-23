@@ -21,10 +21,10 @@ export const InnerView = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-	/**
+    /**
      * Title inside button
      */
-	title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired
 };
 
 //*********************************************************
