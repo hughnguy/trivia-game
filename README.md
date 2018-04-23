@@ -1,10 +1,10 @@
 # trivia-game
 
-This project is a react trivia game application.
+This project is a platform agnostic react trivia game application.
 
 # v2 updates:
 
-* Platform agnostic react modules! React native will import *.native.js and web react will import *.js. We can increase the granularity by specifying *.ios.js or *.android.js files as well. index.js is also present in all modules now so you can just import the directory instead of file.
+* Platform agnostic react modules! React native will import *.native.js and web react will import *.js. We can increase the specificity by creating *.ios.js or *.android.js files as well. index.js is also present in all modules now so you can just import the directory instead of file.
 * Updated the readme. Feel free to check out the instructions below on running the web app.
 * Moved all business logic and state management into redux. Added selectors to query state from the store (if there were any expensive calculations/filtering id wrap them in https://github.com/reactjs/reselect)
 * Converted all components to functional stateless ones (only Home.js needs a lifecycle method to make an api call on mount)
