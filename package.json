@@ -78,7 +78,7 @@
     "mobile-unit-test": "node node_modules/jest/bin/jest.js",
     "watch": "webpack --watch -d",
     "build": "webpack",
-    "build-prod": "npm run build-js -- --env.production",
+    "build-prod": "npm run build -- --env.production",
     "karma": "karma start karma.conf.js",
     "unit-test": "npm run karma",
     "unit-test-debug": "npm run karma -- --debug",
