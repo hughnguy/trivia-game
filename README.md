@@ -1,6 +1,20 @@
 # trivia-game
 
-This project is a platform agnostic react trivia game application.
+This project is a react trivia game application.
+
+Technology stack:
+* Platform agnostic react modules (react + react native)
+* Nodejs web server
+* Styled-components for css styling
+* Redux for state management
+* Redux-persist for persisting store into local storage
+* Karma as a test runner
+* Enzyme for react unit tests
+* Mocha as test framework
+* Chai for assertions
+* Sinon for spies/stubs
+* Webpack for bundling assets
+* Eslint + Stylelint
 
 ## Setup
 
@@ -90,5 +104,15 @@ npm run unit-test-coverage
 
 To run all linters for the front-end code:
 ```
-npm run unit-test-coverage
+npm run lint
+```
+
+To run linter for css:
+```
+npm run lint-css
+```
+
+To run linter for javascript:
+```
+npm run lint-js
 ```
