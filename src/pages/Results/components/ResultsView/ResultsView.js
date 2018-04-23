@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import strings from "trivia-game/src/strings";
 import Title from "trivia-game/src/components/Title";
 import FooterButton from "trivia-game/src/components/FooterButton";
 import ResultsList from "trivia-game/src/pages/Results/components/ResultsView/components/ResultsList";
@@ -85,7 +86,7 @@ const ResultsView = ({
 }) => (
 	<StyledView>
 		<Row>
-			<Title title="You scored"/>
+			<Title title={strings.en.RESULTS_VIEW_TITLE}/>
 		</Row>
 
 		<Row>
@@ -104,7 +105,7 @@ const ResultsView = ({
 		</ResultContainer>
 
 		<FooterButton
-			title="Play again?"
+			title={strings.en.RESULTS_VIEW_FOOTER}
 			onClick={playAgain}
 		/>
 	</StyledView>

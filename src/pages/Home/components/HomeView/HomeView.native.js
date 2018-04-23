@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Title from "trivia-game/src/components/Title/Title";
 import FooterButton from "trivia-game/src/components/FooterButton/FooterButton";
+import strings from "trivia-game/src/strings";
 
 //*********************************************************
 // Styles
@@ -53,25 +54,25 @@ const propTypes = {
 const HomeView = ({onBegin, highScore}) => (
 	<StyledView>
 		<Row>
-			<Title title="Welcome to the Trivia Challenge!"/>
+			<Title title={strings.en.HOME_VIEW_TITLE}/>
 		</Row>
 		<Row>
 			<StyledText>
-                You will be presented with {GLOBAL.NUMBER_QUESTIONS} True or False questions.
+				{strings.en.HOME_VIEW_SUB_TITLE(GLOBAL.NUMBER_QUESTIONS)}
 			</StyledText>
 		</Row>
 		<Row>
 			<StyledText>
-                Can you score 100%?
+				{strings.en.HOME_VIEW_CAN_YOU_SCORE}
 			</StyledText>
 		</Row>
 		<Row>
 			<StyledText>
-                High Score: {highScore}
+				{strings.en.HOME_VIEW_HIGH_SCORE}: {highScore}
 			</StyledText>
 		</Row>
 		<FooterButton
-			title="Begin"
+			title={strings.en.HOME_VIEW_FOOTER}
 			onPress={onBegin}
 		/>
 	</StyledView>

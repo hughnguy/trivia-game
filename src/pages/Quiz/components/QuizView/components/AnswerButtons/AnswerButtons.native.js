@@ -6,6 +6,7 @@ import {
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Button from "trivia-game/src/components/Button/Button";
+import strings from "trivia-game/src/strings";
 
 //*********************************************************
 // Styles
@@ -43,10 +44,10 @@ const propTypes = {
 const AnswerButtons = ({onTrueAnswer, onFalseAnswer})  => (
 	<ButtonView>
 		<ButtonContainer>
-			<Button title="True" onPress={onTrueAnswer}/>
+			<Button title={strings.en.ANSWER_BUTTON_TRUE} onPress={onTrueAnswer}/>
 		</ButtonContainer>
 		<ButtonContainer>
-			<Button title="False" onPress={onFalseAnswer}/>
+			<Button title={strings.en.ANSWER_BUTTON_FALSE} onPress={onFalseAnswer}/>
 		</ButtonContainer>
 	</ButtonView>
 );
