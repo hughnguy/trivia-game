@@ -83,7 +83,7 @@
     "unit-test": "npm run karma",
     "unit-test-debug": "npm run karma -- --debug",
     "unit-test-coverage": "npm run karma -- --coverage",
-    "lint-css": "stylelint src/**/*.js",
+    "lint-css": "stylelint 'src/**/*.js'",
     "lint-js": "eslint .",
     "lint": "npm run lint-css && npm run lint-js"
   },

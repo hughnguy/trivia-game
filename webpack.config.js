@@ -79,6 +79,7 @@ module.exports = (env) => ({
 		new webpack.optimize.CommonsChunkPlugin({
 			name: "vendor",
 			minChunks: Infinity // this ensures that only the listed modules go into the vendor chunk
-		})
+		}),
+		env && env.production ? new UglifyJSPlugin({sourceMap: true}) : () => null
 	]
 });
