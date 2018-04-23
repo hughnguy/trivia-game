@@ -1,6 +1,7 @@
 /*global require __dirname module*/
 const path = require("path");
 const webpack = require("webpack");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 
 const PATHS = {
 	build: path.join(__dirname, "public")
