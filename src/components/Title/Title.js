@@ -28,7 +28,7 @@ const Title = ({
 	title,
 	...rest
 }) => (
-	<StyledText {...rest}>
+	<StyledText data-test="title" {...rest}>
 		{title}
 	</StyledText>
 );

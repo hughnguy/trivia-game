@@ -54,7 +54,7 @@ const propTypes = {
 // Component
 //*********************************************************
 const HomeView = ({onBegin, highScore}) => (
-	<StyledView>
+	<StyledView data-test="home-view">
 		<Row>
 			<Title title={strings.en.HOME_VIEW_TITLE}/>
 		</Row>

@@ -5,11 +5,11 @@ const enableDebug = process.argv.indexOf("--debug") !== -1;
 const enableCoverage = process.argv.indexOf("--coverage") !== -1;
 
 const sourceFiles = [
-    "./tests.webpack.js"
+    "./tests/unit/tests.webpack.js"
 ];
 
 if(enableCoverage) {
-    sourceFiles.push("./src/**/!(*.native|*.test.unit).js");
+    sourceFiles.push("./src/**/!(*.native|*.test.unit|*.test.functional|*.pageobject).js");
 }
 
 const supportedBrowsers = {
@@ -119,7 +119,7 @@ module.exports = function(config) {
         logLevel: (enableDebug) ? config.LOG_DEBUG : config.LOG_WARN,
         reporters: reporters,
         coverageReporter: {
-            dir : path.join(__dirname, "tests", "coverage"),
+            dir : path.join(__dirname, "tests", "unit", "coverage"),
             includeAllSources: true,
             instrumenterOptions: {
                 istanbul: {

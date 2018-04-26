@@ -21,10 +21,10 @@ export const InnerView = styled.div`
 // PropTypes
 //*********************************************************
 const propTypes = {
-    /**
-     * Title inside button
-     */
-    title: PropTypes.string.isRequired
+	/**
+	 * Title inside button
+	 */
+	title: PropTypes.string.isRequired
 };
 
 //*********************************************************
@@ -34,7 +34,7 @@ const FooterButton = ({
 	title,
 	...rest
 }) => (
-	<OuterView>
+	<OuterView data-test="footer-button">
 		<InnerView>
 			<Button title={title} {...rest}/>
 		</InnerView>

@@ -93,7 +93,7 @@ const QuizView = ({
 	}
 
 	return (
-		<StyledView>
+		<StyledView data-test="quiz-view">
 			<Row>
 				<Title title={currentQuestion.category}/>
 			</Row>

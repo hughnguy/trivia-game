@@ -12,6 +12,7 @@
         "expect": false,
         "assert": false,
         "module": false,
+        "exports": false,
 		"process": {
 			"env": {
 				"NODE_ENV": false

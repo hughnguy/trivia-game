@@ -52,7 +52,7 @@ export const StyledSpinner = styled.svg`
 // Component
 //*********************************************************
 const Spinner = ({...rest}) => (
-	<SpinnerView>
+	<SpinnerView data-test="spinner">
 		<StyledSpinner viewBox="0 0 50 50">
 			<circle
 				{...rest}

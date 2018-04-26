@@ -84,7 +84,7 @@ const ResultsView = ({
 	answers,
 	playAgain
 }) => (
-	<StyledView>
+	<StyledView data-test="results-view">
 		<Row>
 			<Title title={strings.en.RESULTS_VIEW_TITLE}/>
 		</Row>

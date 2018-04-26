@@ -41,12 +41,20 @@ const propTypes = {
 // Component
 //*********************************************************
 const AnswerButtons = ({onTrueAnswer, onFalseAnswer})  => (
-	<ButtonView>
+	<ButtonView data-test="answer-buttons">
 		<ButtonContainer>
-			<Button title={strings.en.ANSWER_BUTTON_TRUE} onClick={onTrueAnswer}/>
+			<Button
+				data-test="true-button"
+				title={strings.en.ANSWER_BUTTON_TRUE}
+				onClick={onTrueAnswer}
+			/>
 		</ButtonContainer>
 		<ButtonContainer>
-			<Button title={strings.en.ANSWER_BUTTON_FALSE} onClick={onFalseAnswer}/>
+			<Button
+				data-test="false-button"
+				title={strings.en.ANSWER_BUTTON_FALSE}
+				onClick={onFalseAnswer}
+			/>
 		</ButtonContainer>
 	</ButtonView>
 );

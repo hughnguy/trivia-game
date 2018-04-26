@@ -36,7 +36,7 @@ const Button = ({
 	title,
 	...rest
 }) => (
-	<StyledButton {...rest}>
+	<StyledButton data-test="button" {...rest}>
 		<StyledText>
 			{title}
 		</StyledText>
