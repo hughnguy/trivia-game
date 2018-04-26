@@ -10,9 +10,9 @@ describe("Quiz", function() {
 
 	function goToQuiz() {
 		HomeView.navigate();
-		HomeView.root.waitForVisible();
+		HomeView.waitForVisible();
 		HomeView.startGame();
-		QuizView.root.waitForVisible();
+		QuizView.waitForVisible();
 	}
 
 	context("finishing the game", () => {
@@ -23,7 +23,7 @@ describe("Quiz", function() {
 				QuizView.answerTrue();
 			}
 
-			ResultsView.root.waitForVisible();
+			ResultsView.waitForVisible();
 		});
 	});
 });

@@ -7,9 +7,9 @@ describe("Home", function() {
 
 		it("goes to the quiz route", function () {
 			HomeView.navigate();
-			HomeView.root.waitForVisible();
+			HomeView.waitForVisible();
 			HomeView.startGame();
-			QuizView.root.waitForVisible();
+			QuizView.waitForVisible();
 		});
 	});
 });

@@ -11,6 +11,10 @@ export class QuizView extends PageObject {
 		return new AnswerButtons(this);
 	}
 
+	waitForVisible() {
+		this.root.waitForVisible();
+	}
+
 	answerTrue() {
 		this.answerButtons.clickTrue();
 	}

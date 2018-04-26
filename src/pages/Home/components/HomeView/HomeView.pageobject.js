@@ -18,6 +18,10 @@ export class HomeView extends PageObject {
 	startGame() {
 		this.footerButton.click();
 	}
+
+	waitForVisible() {
+		this.root.waitForVisible();
+	}
 }
 
 export default new HomeView();
