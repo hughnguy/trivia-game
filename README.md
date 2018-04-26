@@ -88,7 +88,7 @@ npm run android
 
 Like `npm start`, but also attempts to open your app on a connected Android device or emulator. Requires an installation of Android build tools (see [React Native docs](https://facebook.github.io/react-native/docs/getting-started.html) for detailed setup). We also recommend installing Genymotion as your Android emulator.
 
-## Running tests
+## Running unit tests
 
 To run unit tests for the web application:
 ```
@@ -103,6 +103,23 @@ npm run unit-test-debug
 To check for unit test code coverage. A coverage report will be generated in the directory: tests/coverage/html
 ```
 npm run unit-test-coverage
+```
+
+## Running functional tests
+
+To run functional tests for the web application, make sure the web app is bundled up and running first:
+```
+npm run build
+node server.js
+```
+then run:
+```
+npm run functional-test
+```
+
+To debug functional tests for the web application. Instead of launching on all supported browsers, this will only launch a single instance of chrome:
+```
+npm run functional-test-debug
 ```
 
 ## Linter
