@@ -152,7 +152,7 @@ export function getNumberCorrect({quiz}) {
 /**
  * Populates store with questions for the quiz
  */
-function updateQuiz(results) {
+export function updateQuiz(results) {
 	return {
 		type: UPDATE_QUIZ,
 		payload: {

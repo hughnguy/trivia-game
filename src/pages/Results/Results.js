@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { HOME_ROUTE } from "trivia-game/src/Routes";
-import { getNumberCorrect, getTotalNumberOfQuestions, playAgain } from "trivia-game/src/redux/modules/quiz";
+import { getNumberCorrect, getTotalNumberOfQuestions, playAgain } from "trivia-game/src/redux/modules/quiz/quiz";
 import ResultsView from "trivia-game/src/pages/Results/components/ResultsView";
 import Routing from "trivia-game/src/router";
 const { Redirect } = Routing;

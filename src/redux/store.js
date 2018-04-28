@@ -17,7 +17,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //*********************************************************
 // Reducers
 //*********************************************************
-import quiz from "trivia-game/src/redux/modules/quiz";
+import quiz from "trivia-game/src/redux/modules/quiz/quiz";
 
 //*********************************************************
 // Root reducer

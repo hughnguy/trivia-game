@@ -3,7 +3,7 @@ import * as GLOBAL from "trivia-game/src/globals.js";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { RESULTS_ROUTE } from "trivia-game/src/Routes";
-import { loadQuestions, answerQuestion, areQuestionsLoaded, getCurrentQuestion, getTotalNumberOfQuestions } from "trivia-game/src/redux/modules/quiz";
+import { loadQuestions, answerQuestion, areQuestionsLoaded, getCurrentQuestion, getTotalNumberOfQuestions } from "trivia-game/src/redux/modules/quiz/quiz";
 import QuizView from "trivia-game/src/pages/Quiz/components/QuizView/QuizView";
 import Routing from "trivia-game/src/router";
 const { Redirect } = Routing;

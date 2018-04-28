@@ -2,7 +2,7 @@ import React  from "react";
 import { QUIZ_ROUTE } from "trivia-game/src/Routes";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { areQuestionsLoaded } from "trivia-game/src/redux/modules/quiz";
+import { areQuestionsLoaded } from "trivia-game/src/redux/modules/quiz/quiz";
 import HomeView from "trivia-game/src/pages/Home/components/HomeView";
 import Routing from "trivia-game/src/router";
 const { Redirect } = Routing;
