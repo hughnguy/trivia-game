@@ -27,7 +27,7 @@ describe("quiz reducer", function() {
 
 		let newState;
 		try {
-			newState = quizReducer(initialState, Actions.updateQuiz(quizMock.results));
+			newState = quizReducer(initialState, Actions.updateQuiz(quizMock.results, [1,2,3,4,5,6,7,8,9,10]));
 		} catch (e) {
 			assert.fail("state should not have mutated");
 		}
@@ -54,7 +54,7 @@ describe("quiz reducer", function() {
 
 		fetchQuestionsPromise.then(() => {
 			assert.equal(dispatchSpy.callCount, 1, "dispatch should have been called");
-			assert.deepEqual(dispatchSpy.args[0][0], Actions.updateQuiz(quizMock.results), "updateQuiz should have been called with arguments");
+			assert.deepEqual(dispatchSpy.args[0][0], Actions.updateQuiz(quizMock.results, [1,2,3,4,5,6,7,8,9,10]), "updateQuiz should have been called with arguments");
 		});
 	});
 
@@ -64,7 +64,7 @@ describe("quiz reducer", function() {
 		const answer = "True";
 
 		try {
-			newState = quizReducer(initialState, Actions.updateQuiz(quizMock.results));
+			newState = quizReducer(initialState, Actions.updateQuiz(quizMock.results, [1,2,3,4,5,6,7,8,9,10]));
 			newState = quizReducer(newState, Actions.answerQuestion(answer));
 		} catch (e) {
 			assert.fail("state should not have mutated");
@@ -89,7 +89,7 @@ describe("quiz reducer", function() {
 		const answer = "True";
 
 		try {
-			newState = quizReducer(initialState, Actions.updateQuiz(quizMock.results));
+			newState = quizReducer(initialState, Actions.updateQuiz(quizMock.results, [1,2,3,4,5,6,7,8,9,10]));
 
 			/* Answer questions until end of game */
 			for(let i = 0; i < quizMock.results.length; i++) {
