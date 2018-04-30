@@ -52,10 +52,10 @@ export default function reducer(state = initialState, action = {}) {
 	const actions = {
 		[UPDATE_QUIZ]: () => {
 
-			const { results } = action.payload;
+			const { results, uniqueIds } = action.payload;
 
-			const questionsWithId = results.map((result) => {
-				result.id = uniquid();
+			const questionsWithId = results.map((result, index) => {
+				result.id = uniqueIds[index];
 				result.question = entities.decode(result.question);
 				return result;
 			});
@@ -152,11 +152,12 @@ export function getNumberCorrect({quiz}) {
 /**
  * Populates store with questions for the quiz
  */
-export function updateQuiz(results) {
+export function updateQuiz(results, uniqueIds) {
 	return {
 		type: UPDATE_QUIZ,
 		payload: {
-			results: results
+			results: results,
+			uniqueIds: uniqueIds
 		}
 	};
 }
@@ -169,7 +170,11 @@ export function loadQuestions(amount, difficulty) {
 
 		return questionApi.fetchQuestions(amount, difficulty).then(({results}) => {
 
-			dispatch(updateQuiz(results));
+			const uniqueIds = [];
+
+			results.map(() => uniqueIds.push(uniquid()));
+
+			dispatch(updateQuiz(results, uniqueIds));
 
 			return results;
 		});
